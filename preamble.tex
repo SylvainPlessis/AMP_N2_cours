@@ -1,0 +1,118 @@
+\makeatletter
+\setbeamertemplate{footline}
+{%
+  \leavevmode%
+  \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fill,rightskip=.3cm]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle\nobreak\hfill\insertframenumber{} / \inserttotalframenumber\usebeamercolor[fg]{page number in head/foot}\usebeamerfont{page number in head/foot}\usebeamertemplate{page number in head/foot}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\graphicspath{{./figs/}}
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+\setbeamercovered{dynamic}
+\beamertemplatetransparentcovered
+\newlength{\@minione}
+\newlength{\@minitwo}
+\newcommand{\juxt}[3][0.48]{%
+\setlength{\@minione}{#1\textwidth}%
+\setlength{\@minitwo}{0.96\textwidth - \@minione}%
+\begin{minipage}[c][5cm][c]{\@minione}
+\raggedright#2
+\end{minipage}\hfill
+\begin{minipage}[c][5cm][c]{\@minitwo}
+\raggedright#3
+\end{minipage}%
+}
+\newlength\p@length
+\newcommand{\danger}[1]{%
+\begin{tikzpicture}[baseline=(X.center)]
+\path[use as bounding box] (-0.4,-0.4) rectangle ++(0.8,0.8);
+\node[draw=red,very thick,text=red,regular polygon, regular polygon sides=3,rounded corners, inner sep=1pt,font=\bf] (X) at (0,0) {!};%
+\end{tikzpicture}
+\setlength{\p@length}{\textwidth}%
+\addtolength{\p@length}{-1cm}%
+\hfill\parbox{\p@length}{\raggedright#1}}
+
+\newcommand{\includefullheightgraphics}[1]{%
+\global\beamer@shrinktrue%
+\gdef\beamer@shrinkframebox{%
+  \setbox\beamer@framebox=\vbox to 0.96\beamer@frametextheight{%
+     \centering%
+     \includegraphics[height=0.96\beamer@frametextheight]{#1}%
+ }%
+}}
+
+%%% info
+\colorlet{infoc}{green!60!black}
+% 1. Define the custom color
+\setbeamercolor{infoed text}{fg=infoc}
+
+% 2. Define the environment (must be named 'infoenv')
+\newenvironment<>{infoenv}{%
+  \only{\setbeamercolor{item projected}{bg=infoc}}
+  \begin{altenv}%
+    {\usebeamercolor[fg]{infoed text}\usebeamerfont{alerted text}}%
+    {\usebeamercolor{normal text}\usebeamerfont{normal text}}%
+    {\color{.}}{}%
+}{\end{altenv}}
+
+% 3. Define the command (optional, for easier usage like \alert)
+%\newcommand<>{\info}{\begin{infoenv}#2\end{infoenv}}
+
+%%%%
+\newcommand{\Emph}[1]{\textcolor{red}{\textbf{#1}}}
+\newcommand{\EMPH}[1]{\textcolor{green!60!black}{\textbf{\textit{#1}}}}
+\newcommand{\shadowbox}[1]{\raisebox{0pt}[0pt]{\makebox[0pt][c]{#1}}}
+\newcommand{\myhref}[2]{\textcolor{violet}{\href{#1}{#2}}}
+%%%%
+\newcommand{\logoFFESSM}{%
+\includegraphics[height=5mm]{logoFFESSM}%
+}
+%%%%
+\newcommand{\zap}[1]{}
+
+\newcommand{\asubsection}[1]{%
+\begin{frame}{}
+\begin{block}{}
+\begin{center}
+\large #1
+\end{center}
+\end{block}
+\end{frame}}
+
+%%%
+
+%\renewcommand{\npunitcommand}[1]{\textrm{#1}}
+\newcommand{\unit}[1]{\npunitcommand{#1}}
+
+%%% to get frame height
+% magic number from log
+\newlength{\frametitleheight}
+\setlength{\frametitleheight}{20.4396pt}
+\newcommand{\frameheight}{\textheight - \frametitleheight}
+
+%%%%
+\tikzset{
+ unvisible/.style={opacity=0},
+ visible on/.style={alt={#1{}{unvisible}}},
+ unvisible on/.style={alt={#1{unvisible}{}}},
+ covered/.style={opacity=0.3},
+ uncover on/.style={alt={#1{}{covered}}},
+ cover on/.style={alt={#1{covered}{}}},
+ alt/.code args={<#1>#2#3}{%
+   \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+ }
+}
+\makeatother

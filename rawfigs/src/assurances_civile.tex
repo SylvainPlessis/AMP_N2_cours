@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage[paperwidth=24.25cm, paperheight=10.29cm,left=0pt,top=0pt,bottom=0pt,right=0pt]{geometry}
+\usepackage[french]{babel}
+\usepackage[autolanguage]{numprint}
+\input{./figspreamble}
+\usepackage{tikz}
+\begin{document}\noindent
+\colorlet{goodcolor}{green!60!black}%
+\colorlet{badcolor}{orange!90!black}%
+\colorlet{failcolor}{red}%
+\tikzset{%
+assurance/.style={text width=5cm, align=center,anchor=north,thick,rounded corners=5pt,minimum height=50pt},
+faute/.style={draw=#1,fill=#1!30},
+good/.style={goodcolor},
+bad/.style={badcolor},
+fail/.style={failcolor}
+}%
+\begin{tikzpicture}[
+  row 1/.style={draw,text width=5cm,align=center,anchor=north},
+  row 2/.style={assurance}, 
+  every path/.style={-stealth,thick},
+  level/.style={sibling distance=5cm},
+  column 1/.style={opacity=0.3},
+  column 3/.style={opacity=0.3}
+]
+\node[matrix] {
+\node {RESPONSABILITÉ PÉNALE}; &[5mm] \node {RESPONSABILITÉ CIVILE\\(OBLIGATOIRE)}; &[2mm] \node {ASSURANCE INDIVIDUELLE\\(OPTIONNELLE)}; \\
+\node {Non-respect de la loi (dont Code du Sport). Baptême au-delà de \numprint{6}~mètres qui tourne mal, \dots}
+  child { node[faute=failcolor] {Infraction pénale}
+    child[fail] {
+      node[text width={}] (juge) {Juge, tribunal,\\amende, prison, \dots}
+      child[fail] {
+        node[fail,text width={}] (noass) {Zéro assurance}
+      }
+    }
+  };
+&
+\node at (0,0) {J'ai cassé l'appareil photo d'un collègue plongeur, \dots}
+  child { node[faute=badcolor] {Dommage corporel, moral ou matériel causé à un tiers}
+    [every node/.append style={text width={}}]
+    child[bad] {
+      node {Préjudice volontaire\\ou hors contrat} child {node {Pour ma pomme}}
+    }
+    child[good] {
+      node {Préjudice involontaire\\garanti par contrat} child { node {Remboursé en partie\\ou totalité par l'assurance\\en responsabilité civile (RC)}}
+    }
+  };
+&
+\node at (0,0) {J'ai eu un accident quelconque qui nécessite un rapatriement, des soins, \dots}
+  child { node[faute=badcolor] {Dommage corporel sans tiers responsable}
+    [every node/.append style={text width={}}]
+    child[bad] {
+      node {Je n'ai pas\\d'assurance individuelle} child {node {Pour ma pomme}}
+    }
+    child[good] {
+      node {J'ai une assurance\\individuelle} child { node {Remboursé en partie\\ou totalité par l'assurance\\individuelle}}
+    }
+  };
+\\
+};
+\end{tikzpicture}
+\end{document}

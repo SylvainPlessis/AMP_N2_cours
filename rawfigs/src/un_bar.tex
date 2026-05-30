@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage[paperwidth=7.35cm,paperheight=4.68cm,left=0pt,right=0pt,top=0pt,bottom=0pt]{geometry}
+\usepackage{tikz}
+\usepackage[french]{babel}
+\usepackage[autolanguage]{numprint}
+\usepackage{emoji}
+\pagestyle{empty}
+\begin{document}
+\centering%
+\begin{tikzpicture}
+\draw (0,0) -- ++(1,0) -- ++(40:0.7) -- ++(-1,0) -- cycle;
+\draw[stealth-stealth,yshift=-5pt] (0,0) --++(1,0) node[pos=0.5,below]{\numprint[m]{1}};
+\draw[stealth-stealth,xshift=-5pt] (0,0) --++(40:0.7) node[pos=0.6,left=2pt]{\numprint[m]{1}};
+
+\filldraw[fill=lightgray] (0,0.5) -- ++(0,1)  -- ++(40:0.7) --++(1,0) --++(0,-1) -- ++(220:0.7) --cycle;
+\draw (1,0.5) --++(0,1) --++(40:0.7) ++(220:0.7) --++(-1,0);
+\node[xslant=1.2] at (0.7,0.2) {\numprint[bar]{1}};
+\node[align=center,font=\small] at (0.5,1) {\numprint{10}\\tonnes};
+
+
+\filldraw[top color=cyan!10,bottom color=cyan!60] (2,0.5) -- ++(0,3)  -- ++(40:0.7) --++(1,0) --++(0,-3) -- ++(220:0.7) --cycle;
+\node at (3.1,2.8) {\emoji{cloud}};
+\draw (3,0.5) --++(0,3) --++(40:0.7) ++(220:0.7) --++(-1,0);
+\node[xslant=1.2] at (2.7,0.2) {\numprint[bar]{1}};
+\node at (2.8,3.7) {\emoji{satellite}};
+\node at (2.2,2.5) {\emoji{sun-behind-cloud}};
+\node at (2.4,2) {\emoji{cloud}};
+\node[anchor=base] at (2.5,0.6) {\emoji{desert-island}};
+\draw (2,0) -- ++(1,0) -- ++(40:0.7) -- ++(-1,0) -- cycle;
+
+\filldraw[top color=blue!10,bottom color=blue!60] (4,0.5) -- ++(0,2)  -- ++(40:0.7) --++(1,0) --++(0,-2) coordinate (bottom) -- ++(220:0.7) --cycle;
+\node at (4.9,1.5) {\emoji{fish}};
+\draw (5,0.5) --++(0,2) --++(40:0.7) ++(220:0.7) --++(-1,0);
+\node[xslant=1.2] at (4.7,0.2) {\numprint[bar]{1}};
+\node at (4.5,0.7) {\emoji{octopus}};
+\node[xscale=-1] at (4.2,2) {\emoji{shark}};
+\node at (5.3,2.3) {\emoji{blowfish}};
+\draw[stealth-stealth] ([xshift=5pt]bottom) -- ++(0,2) node[pos=0.5,right] {\numprint[m]{10}};
+\draw (4,0) -- ++(1,0) -- ++(40:0.7) -- ++(-1,0) -- cycle;
+
+\end{tikzpicture}%
+\end{document}

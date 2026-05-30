@@ -1,0 +1,45 @@
+\documentclass{beamer}
+\usetheme{shadow}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[autolanguage]{numprint}
+\usepackage{graphicx,booktabs,datetime,pdfpages,tikz,amsmath,booktabs,array,colortbl}
+\usetikzlibrary{decorations.pathmorphing,matrix,fit,arrows.meta}
+\input{../../../common/preamble}
+\input{preamble}
+\begin{document}
+
+\title{Théorie N2}
+\author[S.~Plessis]{Sylvain Plessis~--~E2}
+\newcounter{nextyear}
+\setcounter{nextyear}{\the\year}
+\addtocounter{nextyear}{1}
+\date{\the\year\ -- \thenextyear}
+\institute{\logoFFESSMtitle\hspace{1cm}\logoAMPtitle}
+\logo{\includegraphics[width=1cm]{logoAMP}}
+
+\begin{frame}
+\addtocounter{framenumber}{-1}
+\thispagestyle{empty}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+\section{Réglementation}
+%\input{reglementation/main}
+
+\section{Pression}
+\input{baro/main}
+
+\begin{frame}{Merci de votre attention}
+\begin{block}{}
+\centering
+\Huge Des questions?
+\end{block}
+\end{frame}
+
+\end{document}

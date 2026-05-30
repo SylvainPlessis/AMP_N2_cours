@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[top=0pt,left=0pt,bottom=0pt,right=0pt,paperwidth=5cm,paperheight=181pt]{geometry}
+\usepackage[french]{babel}
+\usepackage[autolanguage]{numprint}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing,positioning}
+\begin{document}
+\tikzset{pres/.style={left,align=left,font=\small}}\noindent%
+\begin{tikzpicture}
+\def\d{1.5}
+\fill[draw=none,cyan,fill opacity=0.5] decorate[decoration={snake, segment length=20, amplitude=2pt}]{(-1,0) -- ++(5,0)} -- ++(0,-5.5) -| cycle;
+\node[anchor=base] at (0.25,0.5) {Volume};
+\node[anchor=base] at (2.75,0.5) {Pression};
+\foreach \y in {0,-0.5,...,-4}{
+  \pgfmathparse{int(-\y*10)}\let\p\pgfmathresult
+  \pgfmathequal{0}{mod(\p,10)}\let\hh\pgfmathresult
+  \ifnum\hh=1%
+   \draw (1.4,\y) -- ++(0.2,0) node[pos=0,left,font=\footnotesize] (prof\y) {\numprint{\p}};
+  \else
+   \draw[very thin] (1.4,\y) -- ++(0.2,0);
+  \fi
+  \foreach \sub in {1,2,3,4}{
+    \pgfmathparse{\y-\sub/10}\let\ss\pgfmathresult
+    \draw[very thin] (1.45,\ss) -- ++(0.1,0);
+  }
+}
+\draw[very thin] (1.4,-4.5) -- ++(0.2,0);
+\draw[dotted] (1.5,-4.6) -- ++(0,-0.5);
+\foreach \p/\f in {0/2,-1/1.5,-2/1.33,-3/1.25}{
+  \draw[red,thick,-stealth,shorten <=2pt,shorten >=2pt] (2,\p) -- ++(0,-1) node[pos=0.5,right,red,font=\scriptsize]{$\times\numprint{\f}$};
+  \draw[red,thick,-stealth,shorten <=2pt,shorten >=2pt] (0.7,\p) -- ++(0,-1) node[pos=0.5,left,red,font=\scriptsize]{$\div\numprint{\f}$};
+}
+\end{tikzpicture}
+\end{document}

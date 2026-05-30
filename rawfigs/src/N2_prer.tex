@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[paperwidth=7.725cm, paperheight=8.08cm,left=0pt,top=0pt,bottom=0pt,right=0pt]{geometry}
+\usepackage[french]{babel}
+\usepackage[autolanguage]{numprint}
+\usepackage{tikz,amsmath}
+\usepackage[svgnames]{xcolor}
+\input{./figspreamble}
+\usetikzlibrary{decorations.pathmorphing,fadings}
+\newsavebox{\diver}
+\savebox{\diver}{\includegraphics[width=1cm]{remontee}}
+\newcommand{\dive}{\usebox{\diver}}
+\begin{document}\noindent
+\newcommand{\matos}{%
+$\left\{\begin{array}{l}
+\text{Gilet}\\
+\text{Ordinateur}\\
+\text{Manomètre}\\
+\text{Octopus}\\
+\text{Parachute}
+\end{array}\right.$}%
+\begin{tikzfadingfrompicture}[name=fade top]
+\shade[top color=transparent!90,bottom color=transparent!0] (0,0) rectangle (2,2);
+\end{tikzfadingfrompicture}%
+\begin{tikzpicture}
+\fill[draw=none,path fading=fade top,fill=Aqua] decorate[decoration={snake, segment length=20, amplitude=2pt}]{(-1.7,1.3) -- ++(7.7,0)} -- ++(0,-8) -| cycle;
+\node[xscale=-1]  at (0,0) {\dive};
+\node[xscale=-1]  at (1,0) {\dive};
+\node[xscale=-1] (bot) at (0.5,-1) {\dive};
+\node[align=center,anchor=north west,inner sep=0pt,outer sep=0pt,font=\small] at (1.5,0.5) {\numprint{0}--\numprint[m]{20}\\[5pt]Autonomie\matos};
+\node[align=center,anchor=north,inner sep=0pt,outer sep=0pt,font=\small] at (bot.south) {Palanquée de\\2 à 3 plongeurs};
+%
+\draw[dashed,white] (current bounding box.east) -- (current bounding box.west);
+%
+\node[xscale=-1]  at (0,-4) {\dive};
+\node[xscale=-1]  at (1,-4) {\dive};
+\node[xscale=-1]  at (0.5,-5) {\dive};
+\node[xscale=-1]  at (-0.5,-5) {\dive};
+\node[xscale=-1]  at (1.6,-4.5) {\dive};
+\node[xscale=-1]  at (-1.1,-4.5) {\dive};
+\node[align=center,anchor=north west,inner sep=0pt,outer sep=0pt,font=\small] at (2,-3.5) {$>\numprint[m]{20}, \le\numprint[m]{40}$\\[5pt]Palanquée encadrée de\\1 à 4 plongeurs\\avec possiblement\\un serre-fil (N4 minimum)};
+%
+\node[inner sep=1pt,anchor=south east,font=\tiny] at (current bounding box.south east) {Image des plongeurs de brgfx sur Freepik};
+\end{tikzpicture}
+\end{document}

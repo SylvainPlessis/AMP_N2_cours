@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage[top=0pt,left=0pt,bottom=0pt,right=0pt,paperwidth=1.95cm,paperheight=1.03cm]{geometry}
+\usepackage{tikz}
+\pagestyle{empty}
+\begin{document}
+\centering
+\begin{tikzpicture}
+\coordinate (a) at (0,0);
+\coordinate (b) at (170:8mm);
+\path (b) ++(220:1.2cm) coordinate (c);
+\path (a) ++(0,3mm) coordinate (f);
+\path (b) ++(0,2mm) coordinate (e);
+\path (c) ++(-1pt,3.9mm) coordinate (d);
+
+\path (a) ++(1pt,1.5mm) coordinate (g);
+\path (b) ++(0.5mm,1mm) coordinate (h);
+\path (c) ++(0,2mm) coordinate (i);
+
+\draw (a) -- (b) -- (c) (d) -- (e) -- (f) (g) -- (h) -- (i);
+\draw (a) arc(-90:90:0.9mm and 1.5mm);
+\draw (b) arc(-90:90:0.5mm and 1mm);
+\draw (c) arc(-70:290:0.9mm and 2mm);
+\end{tikzpicture}
+\end{document}

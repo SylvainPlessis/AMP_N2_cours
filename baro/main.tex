@@ -1,0 +1,268 @@
+\begin{frame}{Rappel}
+\begin{minipage}{0.68\textwidth}
+\begin{itemize}
+\item Les gaz sont sensibles à la pression et varient de volume suivant cette
+dernière. 
+\item La pression augmente avec la profondeur.
+\item[$\Rightarrow$] Tout volume de gaz dans le corps sera soumis aux effets de
+  la pression durant une phase de remontée ou de descente.
+\end{itemize}
+\end{minipage}\hfill
+\begin{minipage}{0.315\textwidth}
+\includegraphics[height=6cm]{volumePression}
+\end{minipage}
+\end{frame}
+
+\subsection{\texorpdfstring{$\varphi\upsilon\sigma\iota\kappa\eta$}{Physique}}
+\begin{frame}{Ça presse}
+\begin{block}{}
+La pression est une force appliquée sur une surface:
+marcher dans la neige avec ou sans raquettes n'est pas équivalent,
+de même, on ne plante pas un clou dans n'importe quel sens\dots
+\end{block}
+\medskip
+
+\centering
+\includegraphics{clou}
+\end{frame}
+
+\begin{frame}{De la physique en plongée}
+\only<1>{%
+Une pression est une force par surface $P = \frac{F}{S}$:
+\begin{itemize}
+\item pression en \emph{Pascal} (S.I. [\unit{Pa}] = [\unit{kg \cdot s^{-2} \cdot m^{-1}}]),
+\item force en \emph{Newton} (S.I. [\unit{N}] = [\unit{kg \cdot m \cdot s^{-2}}]),
+\item surface en \emph{mètre carré} (S.I. [\unit{m^2}].
+\end{itemize}
+}
+\only<2>{%
+En plongée on utilise le \emph{bar}: $\numprint[bar]{1}=\numprint[Pa]{100000}$
+
+\numprint[bar]{1} est la force gravitationnelle (a.k.a. le poids) d'une masse
+de \numprint[tonnes]{10} sur \numprint[m^2]{1}: 
+\begin{itemize}
+\item la colonne d'atmosphère ou 
+\item une colonne de \numprint[m]{10} d'eau.
+\end{itemize}
+}%
+\only<3->{\centering
+\includegraphics<3>{un_bar}%
+\includegraphics<4>{pressions}%
+\includegraphics<5>{pressions_fac}%
+}
+\end{frame}
+
+\begin{frame}{Boyle-Mariotte}
+\only<1>{%
+\begin{minipage}{0.35\textwidth}
+\[PV = \text{cte}\]
+Lorque la pression augmente, le volume diminue \emph{d'autant},
+et inversement.
+\end{minipage}\hfill
+\begin{minipage}{0.64\textwidth}
+\begin{tabular}{cc}
+\includegraphics[width=3cm]{Robert_Boyle} & \includegraphics[width=3cm]{Edme_Mariotte} \\
+Robert Boyle & Edme Mariotte\\
+\end{tabular}
+\end{minipage}}%
+\includegraphics<2->{volumePression}\hfill
+\includegraphics<2>{pression_volume}%
+\includegraphics<3>{volume_pression}%
+\end{frame}
+
+\subsection{Prévention des barotraumatismes}
+\begin{frame}{Barotraumatismes}
+\centering%
+\vspace{6mm}\begin{tikzpicture}[overlay]
+\node (pic) at (0,0) {\includegraphics[width=10cm]{plongeuse}};
+\node[above right=3pt,font=\scriptsize] at (pic.south west) {image: Freepik.com};
+%%%%% zones
+\begin{scope}[every path/.style={fill=red,opacity=0.6}]
+%%% sinus
+\fill[rotate around={20:(0.1,2.4)}] (0.1,2.4) circle (2pt and 1pt);
+\fill[rotate around={-20:(0.5,2.4)}] (0.5,2.4) circle (2pt and 1pt);
+%%% oreilles
+\fill (-0.12,2.1) circle (1pt and 3pt);
+\fill (0.7,2.1) circle (1pt and 3pt);
+%%% masque
+\fill[opacity=0.3,rounded corners=1pt] (-0.05,2) -- ++(0,0.35) -- ++(0.7,-0.01) -- ++(0,-0.32)  -- ++(-0.2,0) -- ++(-0.1,0.2) -- ++(-0.1,0) -- ++(-0.1,-0.2) -- cycle;
+%%% dents
+\fill (0.31,1.8) circle (3pt and 1pt);
+%%% poumons
+\fill (0.1,1.25) circle (3pt and 5pt);
+\fill (0.5,1.25) circle (3pt and 5pt);
+%%% ventre
+\fill (0.3,0.6) circle (5pt);
+\end{scope}
+
+\def\xx{-2.5}
+%%% Masque
+\draw[stealth-] (\xx,0.44)node[left]{Masque} -- ++(1,0)  -- (0.1,2.1);
+%%% Ventre
+\draw[stealth-] (\xx,-2.4)node[left]{Ventre} -- ++(1,0) -- (0.3,0.6);
+%%% Dents
+\draw[stealth-] (\xx,-0.54)node[left]{Dents} -- ++(1,0) -- (0.31,1.8);
+%%% Sinus
+\draw[stealth-] (\xx,2.40)  -- (0.1,2.4)  node[pos=0,left]{Sinus};
+\draw (0.5,2.4) -| ++(0,0.2) -- ([xshift=1cm]\xx,2.40) -- (\xx,2.40);
+%%% Oreilles
+\draw[stealth-] (\xx,1.42)node[left]{Oreilles} -- ++(1,0) -- (-0.12,2.1);
+\draw (0.7,2.1) -| ++(0,0.05) -- ++(-1,0) -- ([xshift=1cm]\xx,1.42) -- (\xx,1.42);
+%%% Poumons
+\draw[stealth-] (\xx,-1.52)node[left]{Poumons} -- ++(1,0) -- (0.1,1.25);
+\draw (0.5,1.25) -- ([xshift=1cm]\xx,-1.52) -- (\xx,-1.52);
+%%%
+\node [right,font=\tiny,yshift=2pt] at (1.3,0) {%
+  \begin{minipage}{95pt}
+    \begin{exampleblock}{Concernent}
+      Les cavités souples comme rigides, il existe toujours une limite
+      à laquelle les tissus se déchirent.
+
+      Il faut donc éviter l'écrasement à la descente et l'éclatement à
+      la remontée.
+    \end{exampleblock}
+  \end{minipage}
+};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Les sinus}
+\begin{tikzpicture}
+\node (fig) at (0,0) {\includegraphics[width=10cm]{sinus}};
+%
+\node[uncover on=<1>] (front) at (0.5,3) {Sinus frontaux};
+\draw[uncover on=<1>][Circle-] (-1.8,0.8) -- (front.south);
+\draw[uncover on=<1>][Circle-] (-2.5,0.8) -- (front.south);
+\draw[uncover on=<1>][Circle-] (1.6,1.2) -- (front.south);
+%
+\node[uncover on=<2>][align=center] (eth) at (0.2,1.5) {Sinus\\ethmoïdaux};
+\draw[uncover on=<2>][Circle-] (-1.97,0.3) -- (eth.south);
+\draw[uncover on=<2>][Circle-] (-2.4,0.3) -- (eth.south);
+\draw[uncover on=<2>][Circle-] (-2.5,0) -- (eth.south);
+\draw[uncover on=<2>][Circle-] (-1.9,0) -- (eth.south);
+\draw[uncover on=<2>][Circle-] (2.1,0.5) -- (eth.south);
+%
+\node[uncover on=<3>][align=center,inner sep=0pt] (max) at (0,-2.5) {Sinus\\maxillaires};
+\draw[uncover on=<3>][Circle-] (-1.3,-0.5) -- (max.north);
+\draw[uncover on=<3>][Circle-] (-3,-0.5) -- (max.north);
+\draw[uncover on=<3>][Circle-] (1.8,-0.8) -- (max.north);
+%
+\node[uncover on=<4>][align=center] (sphe) at (3.2,1.5) {Sinus\\sphénoïdaux};
+\draw[uncover on=<4>][Circle-] (3.2,-0.1) -- (sphe);
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Les oreilles}
+\begin{tikzpicture}[remember picture, overlay, every pin edge/.style={black}]
+\node[yshift=-20pt] at (current page.center) {\includegraphics[height=\frameheight]{oreille_nue}};
+\fill<1> (3.2,-0.2) circle(1pt) node[pin=left:Conduit auditif,inner sep=0pt]{};
+\fill<1> (5.7,0.7)  circle(1pt) node[pin={[pin distance=1.5cm]95:Tympan},inner sep=0pt]{};
+\fill<1> (8.6,-0.8) circle(1pt) node[pin={[pin distance=1.2cm]200:Trompe d'Eustache},inner sep=0pt]{};
+\draw<2>[blue,thick,-stealth] (3.2,-0.1) -- ++(20:1);
+\draw<2>[blue,thick,-stealth] (3.2,-0.35) -- ++(20:1) node[pos=0,left,blue]{$P_\text{ext}$};
+\draw<2>[blue,thick,-stealth] (3.2,-0.6) -- ++(20:1);
+\node<2>[draw,circle,minimum size=20pt,pin={45:Souvent fermée}] at (8.2,-0.5){};
+\draw<2>[cyan,-stealth,decorate,decoration={zigzag,segment length=9pt,amplitude=2pt}] (9.1,-1.2) -- ++(135:1.1cm) node[pos=0,below right] {$P_\text{mâchoire}$};
+\draw<3-4>[stealth-,thick,blue] (5.5,0.7) --++(200:1) node[pos=0.3,above,font=\bf]{+};
+\draw<3-4>[-stealth,cyan,decorate,decoration={zigzag,amplitude=1pt,segment length=6pt, post=lineto, post length=2pt}] (7,0.45) --++(170:0.8) node[pos=0.7,above,font=\tiny]{+};
+\draw<4>[-stealth,cyan,thick]  (9.1,-1.2) -- ++(135:1.1cm) node[pos=0,below right] {Équilibrer} node[pos=0.5,above,font=\bf]{+};
+%\draw[gray] (0,-4) grid (10,4);
+%\node at (0,0){(0,0)};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}{La trompe d'Eustache}
+\begin{block}<only@-2>{Smith \& al., Neuroradiology, 2016\footnotemark}
+The ET can be considered a continuous organ with the middle
+ear and mastoid cells. The tube is usually divided into three
+sections when described anatomically: cartilaginous, osseous
+and junctional, where the two main parts overlap. Particularly
+in adults, \emph<2>{the ET can assume a gently curving, inverted ‘S’
+shape}, although \textbf<2>{there is a range} from \textbf<2>{almost straight} to \textbf<2>{acutely
+curved} [10].\\\smallskip
+\rule{4cm}{0.1pt}
+
+\tiny 10. Sudo M, Sando I, Suzuki C (1998) \textit{Three-dimensional reconstruction and
+measurement study of human eustachian tube structures: a hypothesis of
+eustachian tube function.} Ann Otol Rhinol Laryngol 107:547–554
+\end{block}
+\only<-2>{%
+\footnotetext{M. E. Smith, D. J. Scoffings, and J. R. Tysome. \textit{Imaging of the
+eustachian tube and its function : a systematic review.}
+Neuroradiology, 58(6) :543–556, Jun 2016. ISSN 1432-1920.
+doi: 10.1007/s00234-016-1663-4.}}%
+\only<3->{\centering
+\begin{tikzpicture}[ampersand replacement=\&]
+\matrix[column sep=5pt] at (0,0) {
+\node (ul) {\includegraphics[width=3cm]{Eustache_droit}};  \& \node {Izy pizy};   \& \node {$\sim \numprint{50}$\,\%};\\
+\node{\includegraphics[width=3cm]{Eustache_courbe}}; \& \node{Technique};  \& \node[minimum width=50pt] (a) {}; \\
+\node{\includegraphics[width=3cm]{Eustache_twist}};  \& \node[text width=4cm] {Très technique, voire impossible avec certaines méthodes}; \& \node (b) {};\\
+};
+\node[fit={(a) (b)}] {$\sim \numprint{50}$\,\%};
+\draw (ul.south west) -- (ul.south -| a.west);
+\node<4>[text width=8cm,align=center,red,fill=white,opacity=0.6,text opacity=1,font=\bf\huge] at (0,0) {Vous ne savez pas où vous vous situez~! DOUCEMENT SUR LES OREILLES~!};
+\end{tikzpicture}}
+\end{frame}
+
+\begin{frame}{Méthodes d'équilibrage}
+\centering\scriptsize%
+\vspace{-10pt}\makebox[0pt][c]{%
+\begin{tabular}{
+>{\centering}p{40pt}
+>{\centering}p{40pt}
+>{\centering}p{43pt}
+>{\centering}p{55pt}
+>{\centering}p{37pt}
+>{\centering\arraybackslash}p{65pt}
+}\toprule
+          & Valsalva & Déglutition & \cellcolor{green}Frenzel & \cellcolor{green}Toynbee & \cellcolor{green} B.T.V. Delonca \\\midrule
+Nez       & pincé    & libre       & pincé   & pincé   & libre \\
+Bouche    & fermée   & fermée      & libre   & fermée  & libre \\
+Glotte    & ouverte  & fermée      & fermée  & fermée  & libre \\\addlinespace
+Action    & souffler dans le nez & avaler sa salive & langue plaquée contre palais, prononcer KE & avaler salive & ouverture du maxillaire inférieur (baillement) \\\addlinespace
+Résultat sur l'oreille 
+moyenne   & surpression d'origine pulmonaire & équipression & surpression d'origine rhinopharyngée & dépression & équipression \\\addlinespace
+Exécution & facile  & très facile  & difficile avec un détendeur & très facile & difficile \\
+Sécurité  & moyenne & moyenne      & bonne   & bonne   & parfaite \\\midrule
+          & descente & descente et remontée & descente & remontée & descente et remontée \\\bottomrule
+\end{tabular}%
+}
+\end{frame}
+
+\begin{frame}{Le masque}
+\end{frame}
+
+\begin{frame}{Les intestins}
+\end{frame}
+
+\begin{frame}{Les dents}
+\end{frame}
+
+\begin{frame}{Les poumons}
+\end{frame}
+
+\subsection{Consommation d'air}
+\begin{frame}{Consommation}
+On respire un volume constant à pression extérieure (voir schéma détendeur)
+donc plus la pression augmente, plus on augmente la quantité d'air respiré. 
+\begin{itemize}
+\item calcul autonomie,
+\item si rythme respiratoire évolue, que se passe-t-il?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Remplir les poumons sous pression}
+\begin{itemize}
+\item Respiration, de \numprint[l\cdot min^{-1}]{12} à \numprint[l\cdot min^{-1}]{20},
+\item bouteille \numprint[l]{12} à \numprint[bar]{200};
+\item[$\Rightarrow$] \numprint[l]{2400}
+\end{itemize}
+\small
+\begin{tabular}{l>{\raggedright}p{1.8cm}>{\raggedright}p{2.2cm}>{\raggedright\arraybackslash}p{3cm}}\toprule
+                 & Volume non respirable (\npunitcommand{l}) & Respiration en volume surface (\npunitcommand{l\cdot min^{-1}}) & Temps pour vider la bouteille (\npunitcommand{min})\\\midrule
+surface          & \numprint{12}      & \numprint{12}--\numprint{20}  & \numprint{199}--\numprint{119.4} \\
+\numprint[m]{10} & \numprint{24}      & \numprint{24}--\numprint{40}  & \numprint{99}--\numprint{59.4}  \\ % 24 s
+\numprint[m]{20} & \numprint{36}      & \numprint{36}--\numprint{60}  & \numprint{65.7}--\numprint{39.4} \\ % 42 s
+\numprint[m]{40} & \numprint{60}      & \numprint{60}--\numprint{100} & \numprint{39}--\numprint{23.4} \\\bottomrule
+\end{tabular}
+\end{frame}

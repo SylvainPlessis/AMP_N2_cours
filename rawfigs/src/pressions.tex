@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[top=0pt,left=0pt,bottom=0pt,right=0pt,paperwidth=7cm,paperheight=6.53cm]{geometry}
+\usepackage[french]{babel}
+\usepackage[autolanguage]{numprint}
+\usepackage{tikz,twemojis}
+\usetikzlibrary{decorations.pathmorphing,positioning}
+\begin{document}
+\tikzset{pres/.style={left,align=left,font=\small}}\noindent
+\begin{tikzpicture}
+\def\d{2.8}
+\fill[draw=none,cyan,fill opacity=0.5] decorate[decoration={snake, segment length=20, amplitude=2pt}]{(-1,0) -- ++(5,0)} -- ++(0,-4) -| cycle;
+\draw[-stealth] (\d,1.5) -- ++(0,-1.5) node[pos=0.3,pres]{Pression atmosphérique\\(\numprint[bar]{1})};
+\draw[stealth-stealth] (\d,0) -- ++(0,-3) node[pos=0.5,pres]{Pression hydrostatique\\(\numprint[bar]{1} par \numprint[m]{10})};
+\draw[dashed] (\d,1.5) -- ++(0,1);
+\node[below] (divers) at (\d,-3) {\twemoji{mermaid}\twemoji{merman}};
+\node[pres] at (divers.west) {${\color{blue}P_t} = P_a + P_h$};
+\draw (4,0.5) -- ++(0,-4.5);
+\node[base left] at (4,0.5) {\npunitcommand{m}};
+\node[base right,blue] at (4,0.5) {\npunitcommand{bar}};
+\foreach \y in {0,-1,-2,-3}{
+  \pgfmathparse{int(-\y*10)}\let\p\pgfmathresult
+  \pgfmathparse{int(1 - \y)}\let\b\pgfmathresult
+  \draw (3.9,\y) -- ++(0.2,0) node[left,pos=0,font=\footnotesize]{\numprint{\p}} node[right,pos=1,font=\footnotesize,blue]{\numprint{\b}};
+}
+\end{tikzpicture}
+\end{document}

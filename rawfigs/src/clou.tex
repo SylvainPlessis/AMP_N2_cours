@@ -1,0 +1,18 @@
+\documentclass{article}
+\usepackage[top=0pt,left=0pt,bottom=0pt,right=0pt,paperwidth=2.6cm,paperheight=3.35cm]{geometry}
+\usepackage{tikz}
+\begin{document}
+\centering
+\tikzset{pics/.cd, 
+checkmark/.style={code={% starting point : https://tex.stackexchange.com/a/132790/121799
+\pgfgettransformentries{\tmpxx}{\tmp}{\tmp}{\tmp}{\tmp}{\tmp}
+\draw[line width=\tmpxx*1pt,draw=none,fill=green,line join=bevel,line cap=round] (0,.35) -- (.25,0) to[bend left=5] (0.8,.6) to[bend
+right=5] (.25,.18) -- cycle;}}}
+\begin{tikzpicture}
+\draw (0,0) -- ++(0,-3);
+\draw (0.1,-1) -- ++(0.2,0.1) -- ++(1,0.01) ++(0,0.29) -- ++(0,-0.8) ++(0,0.29) -- ++(-1,0.01) -- ++(-0.2,0.1);
+\draw[xshift=1.4cm,xscale=-1,yshift=-1cm] (0.1,-1) -- ++(0.2,0.1) -- ++(1,0.01) ++(0,0.29) -- ++(0,-0.8) ++(0,0.29) -- ++(-1,0.01) -- ++(-0.2,0.1);
+\draw[red,ultra thick,line cap=round] (1.55,-2.2) -- ++(0.4,0.4) (1.95,-2.2) -- ++(-0.4,0.4);
+\draw (1.5,-1.2) pic{checkmark};
+\end{tikzpicture}
+\end{document}
