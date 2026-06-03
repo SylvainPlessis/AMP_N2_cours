@@ -130,25 +130,25 @@ Robert Boyle & Edme Mariotte\\
 \begin{tikzpicture}
 \node (fig) at (0,0) {\includegraphics[width=10cm]{sinus}};
 %
-\node[uncover on=<1>] (front) at (0.5,3) {Sinus frontaux};
-\draw[uncover on=<1>][Circle-] (-1.8,0.8) -- (front.south);
-\draw[uncover on=<1>][Circle-] (-2.5,0.8) -- (front.south);
-\draw[uncover on=<1>][Circle-] (1.6,1.2) -- (front.south);
+\node[uncover on={<1,5>}] (front) at (0.5,3) {Sinus frontaux};
+\draw[uncover on={<1,5>}, Circle-] (-1.8,0.8) -- (front.south);
+\draw[uncover on={<1,5>}, Circle-] (-2.5,0.8) -- (front.south);
+\draw[uncover on={<1,5>}, Circle-] (1.6,1.2) -- (front.south);
 %
-\node[uncover on=<2>][align=center] (eth) at (0.2,1.5) {Sinus\\ethmoïdaux};
-\draw[uncover on=<2>][Circle-] (-1.97,0.3) -- (eth.south);
-\draw[uncover on=<2>][Circle-] (-2.4,0.3) -- (eth.south);
-\draw[uncover on=<2>][Circle-] (-2.5,0) -- (eth.south);
-\draw[uncover on=<2>][Circle-] (-1.9,0) -- (eth.south);
-\draw[uncover on=<2>][Circle-] (2.1,0.5) -- (eth.south);
+\node<2->[uncover on=<2>, align=center] (eth) at (0.2,1.5) {Sinus\\ethmoïdaux};
+\draw<2->[uncover on=<2>, Circle-] (-1.97,0.3) -- (eth.south);
+\draw<2->[uncover on=<2>, Circle-] (-2.4,0.3) -- (eth.south);
+\draw<2->[uncover on=<2>, Circle-] (-2.5,0) -- (eth.south);
+\draw<2->[uncover on=<2>, Circle-] (-1.9,0) -- (eth.south);
+\draw<2->[uncover on=<2>, Circle-] (2.1,0.5) -- (eth.south);
 %
-\node[uncover on=<3>][align=center,inner sep=0pt] (max) at (0,-2.5) {Sinus\\maxillaires};
-\draw[uncover on=<3>][Circle-] (-1.3,-0.5) -- (max.north);
-\draw[uncover on=<3>][Circle-] (-3,-0.5) -- (max.north);
-\draw[uncover on=<3>][Circle-] (1.8,-0.8) -- (max.north);
+\node<3->[uncover on={<3,5>}, align=center,inner sep=0pt] (max) at (0,-2.5) {Sinus\\maxillaires};
+\draw<3->[uncover on={<3,5>}, Circle-] (-1.3,-0.5) -- (max.north);
+\draw<3->[uncover on={<3,5>}, Circle-] (-3,-0.5) -- (max.north);
+\draw<3->[uncover on={<3,5>}, Circle-] (1.8,-0.8) -- (max.north);
 %
-\node[uncover on=<4>][align=center] (sphe) at (3.2,1.5) {Sinus\\sphénoïdaux};
-\draw[uncover on=<4>][Circle-] (3.2,-0.1) -- (sphe);
+\node<4->[uncover on=<4>, align=center] (sphe) at (3.2,1.5) {Sinus\\sphénoïdaux};
+\draw<4->[uncover on=<4>, Circle-] (3.2,-0.1) -- (sphe);
 \end{tikzpicture}
 \end{frame}
 
@@ -156,18 +156,17 @@ Robert Boyle & Edme Mariotte\\
 \begin{tikzpicture}[remember picture, overlay, every pin edge/.style={black}]
 \node[yshift=-20pt] at (current page.center) {\includegraphics[height=\frameheight]{oreille_nue}};
 \fill<1> (3.2,-0.2) circle(1pt) node[pin=left:Conduit auditif,inner sep=0pt]{};
-\fill<1> (5.7,0.7)  circle(1pt) node[pin={[pin distance=1.5cm]95:Tympan},inner sep=0pt]{};
+\fill<1> (5.7,0.7)  circle(1pt) node[pin={[pin distance=1.5cm]95:Tympan},inner sep=0pt](tym){};
 \fill<1> (8.6,-0.8) circle(1pt) node[pin={[pin distance=1.2cm]200:Trompe d'Eustache},inner sep=0pt]{};
 \draw<2>[blue,thick,-stealth] (3.2,-0.1) -- ++(20:1);
 \draw<2>[blue,thick,-stealth] (3.2,-0.35) -- ++(20:1) node[pos=0,left,blue]{$P_\text{ext}$};
 \draw<2>[blue,thick,-stealth] (3.2,-0.6) -- ++(20:1);
-\node<2>[draw,circle,minimum size=20pt,pin={45:Souvent fermée}] at (8.2,-0.5){};
+\node<2>[draw,thick,ellipse,pin={45:Souvent fermée},rotate=-40] at (8.2,-0.4){\rule{30pt}{0pt}};
 \draw<2>[cyan,-stealth,decorate,decoration={zigzag,segment length=9pt,amplitude=2pt}] (9.1,-1.2) -- ++(135:1.1cm) node[pos=0,below right] {$P_\text{mâchoire}$};
-\draw<3-4>[stealth-,thick,blue] (5.5,0.7) --++(200:1) node[pos=0.3,above,font=\bf]{+};
-\draw<3-4>[-stealth,cyan,decorate,decoration={zigzag,amplitude=1pt,segment length=6pt, post=lineto, post length=2pt}] (7,0.45) --++(170:0.8) node[pos=0.7,above,font=\tiny]{+};
-\draw<4>[-stealth,cyan,thick]  (9.1,-1.2) -- ++(135:1.1cm) node[pos=0,below right] {Équilibrer} node[pos=0.5,above,font=\bf]{+};
-%\draw[gray] (0,-4) grid (10,4);
-%\node at (0,0){(0,0)};
+\draw<3-5>[stealth-,thick,blue] (5.5,0.7) --++(200:1) node[pos=0.3,above,font=\bf]{+};
+\draw<3-5>[-stealth,cyan,decorate,decoration={zigzag,amplitude=1pt,segment length=6pt, post=lineto, post length=2pt}] (7,0.45) --++(170:0.8) node[pos=0.7,above,font=\tiny]{+};
+\node<4>[regular polygon, regular polygon sides=3,white,rounded corners=5pt,above=10pt,inner sep=0pt,font=\large\bf,fill=red,fill opacity=0.7,text opacity=1] at (tym){!};
+\draw<5>[-stealth,cyan,thick]  (9.1,-1.2) -- ++(135:1.1cm) node[pos=0,below right] {Équilibrer} node[pos=0.5,above,font=\bf]{+};
 \end{tikzpicture}
 \end{frame}
 
@@ -200,7 +199,7 @@ doi: 10.1007/s00234-016-1663-4.}}%
 };
 \node[fit={(a) (b)}] {$\sim \numprint{50}$\,\%};
 \draw (ul.south west) -- (ul.south -| a.west);
-\node<4>[text width=8cm,align=center,red,fill=white,opacity=0.6,text opacity=1,font=\bf\huge] at (0,0) {Vous ne savez pas où vous vous situez~! DOUCEMENT SUR LES OREILLES~!};
+\node<4>[text width=8cm,align=center,red,fill=white,opacity=0.7,text opacity=1,font=\bf\huge] at (0,0) {Vous ne savez pas où vous vous situez~! DOUCEMENT SUR LES OREILLES~!};
 \end{tikzpicture}}
 \end{frame}
 
