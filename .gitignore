@@ -1,0 +1,14 @@
+docs
+*.aux
+*.log
+*.swp
+*.bz2
+*.nav
+*.out
+*.snm
+*.toc
+figs
+rawfigs/src/srcfigs
+202*
+common
+rawfigs/src/rawsrcfigs/dezip/
