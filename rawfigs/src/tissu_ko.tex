@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage[top=0pt,left=0pt,bottom=0pt,right=0pt,paperwidth=10cm,paperheight=5.4cm]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{patterns.meta,decorations.pathmorphing,fadings,shapes.symbols}
+\pagestyle{empty}
+\begin{document}
+\centering\vspace*{\fill}%
+\pgfdeclareradialshading{mygauss}{\pgfpointorigin}{%
+  color(0pt)=(pgftransparent!0);   % Centre opaque
+  color(12pt)=(pgftransparent!20); % Milieu à 50% de transparence
+  color(25pt)=(pgftransparent!100)   % Bord transparent
+}%
+\pgfdeclarefading{fade out}{\pgfuseshading{mygauss}}%
+\begin{tikzpicture}
+\path[use as bounding box] (-5,-1) rectangle (5,3.2);
+\fill[path fading=fade out,red] (1,1.8) circle(28pt);
+\fill[pink,postaction={pattern={Lines[angle=-45,distance=5mm]},pattern color=white,opacity=0.4}] (-5,2) 
+   decorate [decoration={random steps,segment length=10pt}, rounded corners=3pt] { --(0,2) --(1,1) --++(25pt,0.9) }
+  --(5,2) --++(0,-3) --++(-10,0) -- cycle;
+\fill[violet] (-5,1.8) 
+  decorate [decoration={random steps,segment length=10pt}, rounded corners=3pt] { -- (0,1.8) -- (1,2.5) -- ++(25pt,-0.7) -- (5,1.8) } 
+  -- ++(0,1.2) -- ++(-10,0) -- cycle;
+\fill[yellow!80!black] (-5,2.9) 
+  decorate [decoration={random steps,segment length=5pt}, rounded corners=1pt] { -- ++(10,0) } 
+  -- ++(0,0.3) -- ++(-10,0) -- cycle;
+\node[starburst, starburst points=8,starburst point height=5pt, inner sep=1.5pt,ultra thin,fill=yellow,draw=red] at (0.3,1.8) {};
+\node[starburst, starburst points=8,starburst point height=5pt, inner sep=1.5pt,ultra thin,fill=yellow,draw=red] at (1.7,1.85) {};
+\node[starburst, starburst points=8,starburst point height=5pt, inner sep=1.5pt,ultra thin,fill=yellow,draw=red] at (1,1.1) {};
+\node[starburst, starburst points=8,starburst point height=5pt, inner sep=1.5pt,ultra thin,fill=yellow,draw=red] at (1,2.4) {};
+\shade[ball color=gray!30,opacity=0.7] (1,1.8) circle(15pt);
+\end{tikzpicture}
+\end{document}

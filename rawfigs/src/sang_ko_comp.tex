@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage[top=0pt,left=0pt,bottom=0pt,right=0pt,paperwidth=10cm,paperheight=7cm]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing,fadings}
+\pagestyle{empty}
+\begin{document}
+\pgfdeclareradialshading{mygauss}{\pgfpointorigin}{%
+  color(0pt)=(pgftransparent!0);   % Centre opaque
+  color(17pt)=(pgftransparent!20); % Milieu à 50% de transparence
+  color(25pt)=(pgftransparent!100)   % Bord transparent
+}%
+\pgfdeclarefading{fade out}{\pgfuseshading{mygauss}}
+\centering%
+\begin{tikzpicture}
+\path[use as bounding box] (-5,-3.5) rectangle ++(10,7);
+\begin{scope}[transform canvas={rotate=30}]
+\begin{scope}
+\path[clip,rounded corners=2pt] (-6,-1) -- (2.4,-1) 
+  decorate [decoration={random steps,segment length=5pt}] { arc(150:45:20pt and 24pt) -- ++(0.2,0) } 
+  -- (11,-1) -- ++(0,2) -| cycle;
+\shade[top color=red!10,bottom color=red!10,middle color=red!50] (-5,-1) rectangle ++(10,2);
+\fill[red, path fading=fade out] (3,-1.2) circle(25pt);
+\end{scope}
+\foreach \x in {1.5,3.5}{
+  \draw[red,-stealth] (\x,0) -- ++(1,0);
+}
+\draw[very thick,red,-stealth,decoration=zigzag,decorate] (-4.7,0.25) -- ++(0.7,0);
+\draw[very thick,red,-stealth,decoration=zigzag,decorate] (-4.7,-0.25) -- ++(0.7,0);
+\draw[very thick,red,-stealth,decoration=zigzag,decorate] (-4.7,0) -- ++(0.7,0);
+\draw[very thick,red,-stealth,decoration=zigzag,decorate] (-0.5,0) -- ++(0.7,0);
+\shade[ball color=gray!30,opacity=0.7] (0.7,0) circle(15pt);
+\shade[ball color=gray!30,opacity=0.7] (-1.5,0) arc(0:360:12mm and 9mm);
+\shade[ball color=gray!30] (3,-1.2) circle(15pt);
+\end{scope}
+\end{tikzpicture}
+\end{document}

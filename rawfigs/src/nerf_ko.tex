@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage[top=0pt,left=0pt,bottom=0pt,right=0pt,paperwidth=10cm,paperheight=5.4cm]{geometry}
+\usepackage{tikz,utfsym}
+\usetikzlibrary{patterns,decorations.pathmorphing,fadings}
+\pagestyle{empty}
+\begin{document}
+\pgfdeclareradialshading{mygauss}{\pgfpointorigin}{%
+  color(0pt)=(pgftransparent!0);   % Centre opaque
+  color(17pt)=(pgftransparent!20); % Milieu à 50% de transparence
+  color(25pt)=(pgftransparent!100)   % Bord transparent
+}%
+\pgfdeclarefading{fade out}{\pgfuseshading{mygauss}}%
+\pgfdeclarelayer{top}%
+\pgfsetlayers{main,top}%
+\centering\vspace*{\fill}%
+\begin{tikzpicture}
+\path[use as bounding box] (-5,-3) rectangle (5,1.8);
+\shade[ball color=gray!30,opacity=0.7] (0,1.2) circle(25pt);
+\shade[clip,rounded corners=2pt] (-6,1) -- (-1,1) 
+  decorate [decoration={random steps,segment length=5pt,amplitude=3pt}] { arc(-170:-10:30pt and 35pt) } 
+  -- (11,1) -- ++(0,-4) -| cycle;
+\shade[top color=blue!10,bottom color=blue!10,middle color=blue!50] (-5,-1) rectangle ++(10,2);
+\fill[blue, path fading=fade out] (0,1.2) circle(45pt);
+\fill[pattern=horizontal lines gray] (-5,-1) rectangle ++(10,-2);
+\begin{pgfonlayer}{top}
+\path (-1.2,1) arc(-170:-10:36pt and 40pt)
+  \foreach \p/\a in {0.2/-30,0.5/30,0.8/90}{
+   node[red,rotate=\a,pos=\p,scale=2] {\usym{1F5F2}}
+};
+\end{pgfonlayer}
+\end{tikzpicture}
+\end{document}

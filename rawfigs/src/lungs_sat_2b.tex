@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage[top=0pt,left=0pt,bottom=0pt,right=0pt,paperwidth=3.42cm,paperheight=6cm]{geometry}
+\usepackage{tikz}
+\usepackage{desat}
+\usepackage{twemojis}
+\input{./figspreamble}
+\pagestyle{empty}
+\begin{document}
+\centering%
+\begin{tikzpicture}[
+  echange/.style={-stealth,double=white},
+  big echange/.style={echange, double=white, thick},
+  small echange/.style={echange, double=white, very thin}]
+\path[use as bounding box] (-1.7,-4.5) rectangle (1.7,1.5);
+\tikzair{12}
+\begin{scope}[yshift=-3cm]
+\shade[top color=white,bottom color=red!30] (-1.5,-1.5) rectangle (1.5,1.5);
+\node at (0,0) {\includegraphics[height=2.5cm]{circulation-sanguine}};
+\tikzair{12}
+\end{scope}
+\draw (-1.7,-1.5) -- (1.7,-1.5) node[pos=0.5,nearly opaque,font=\Huge,scale=2]{\texttwemoji{lungs}};
+\node at (0.375,-1.5)  {$\emptyset$};
+\node at (-0.375,-1.5) {$\emptyset$};
+\end{tikzpicture}
+\end{document}

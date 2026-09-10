@@ -7,14 +7,15 @@
 \pagestyle{empty}
 \begin{document}
 \centering%
-\tikzfading[name=topbottom, top color=transparent!0, bottom color=transparent!100]
+\tikzfading[name=fade inside,inner color=transparent!80, outer color=transparent!30]
+\tikzfading[name=fade down,top color=transparent!80, bottom color=transparent!0]
 \begin{tikzpicture}[y=3mm]
-\fill[draw=none,bottom color=cyan!60, top color=white] decorate[decoration=snake, segment length=20]{(0,0) -- (2,0)} -- ++(0,-22) -- (0,-22) -- cycle;
+\fill[draw=none,path fading=fade down, fill=cyan!60] decorate[decoration=snake, segment length=20]{(0,0) -- (2,0)} -- ++(0,-22) -- (0,-22) -- cycle;
 \foreach \y in {0,5,...,20}
 {
   \pgfmathparse{10 / (1 + \y/10)}\let\v\pgfmathresult
   \draw (-2mm,-\y) -- ++(4mm,0) node[pos=0,anchor=east]{\y~m};
-  \fill[ball color=white] (1,-\y) circle (\v pt);
+  \shade[path fading=fade inside,ball color=white] (1,-\y) circle (\v pt);
   \foreach \r in {0,45,...,315}
     \pgfmathparse{\y/10}\let\l\pgfmathresult
     \pgfmathparse{\y/5 + 12}\let\st\pgfmathresult

@@ -7,22 +7,34 @@
 \begin{tikzpicture}
 \coordinate (a) at (0,0);
 \coordinate (b) at (190:8mm);
-\path (b) ++(160:4mm) coordinate (bp);
-\path (bp) ++(220:7mm) coordinate (c);
+\path (b) ++(160:4mm) coordinate (c);
+\path (c) ++(220:7mm) coordinate (d);
 
-\path (a) ++(0,3mm) coordinate (f);
-\path (b) ++(0,2mm) coordinate (e);
-\path (bp) ++(0,2mm) coordinate (ep);
-\path (c) ++(-1pt,3.9mm) coordinate (d);
+\path (a) arc(-90:90:0.6mm and 1.5mm) coordinate (a');
+\path (b) arc(-90:90:0.2mm and 1mm) coordinate (b');
+\path (c) arc(-90:90:0.2mm and 1mm) coordinate (c');
+\path (d) arc(-70:100:0.9mm and 2mm) coordinate (d');
 
-\path (a) ++(1pt,1.5mm) coordinate (g);
-\path (b) ++(0.5mm,1mm) coordinate (h);
-\path (bp) ++(0.5mm,1mm) coordinate (hp);
-\path (c) ++(0,2mm) coordinate (i);
+\path[clip, rounded corners=1pt] (a) -- (b) -- (c) -- (d) arc(-70:-260:0.9mm and 2mm) -- (c') -- (b') -- (a') arc(90:-90:0.6mm and 1.5mm);
+\begin{scope}
+\path[clip] (a) -- (b) arc(-90:90:0.2mm and 1mm) -- (a')  arc(90:-90:0.6mm and 1.5mm);
+\shade [top color=blue, bottom color=blue,middle color=white,shading angle=13] ([xshift=2pt]a') rectangle (b);
+\end{scope}
 
-\draw (a) -- (b) -- (bp) -- (c) (d) -- (ep) -- (e) -- (f) (g) -- (h) -- (hp) -- (i);
-\draw (a) arc(-90:90:0.9mm and 1.5mm);
-\draw (b) arc(-90:90:0.5mm and 1mm);
-\draw (c) arc(-70:290:0.9mm and 2mm);
+\begin{scope}
+\path[clip] (b) -- (c) arc(-90:90:0.2mm and 1mm) -- (b')  arc(90:-90:0.2mm and 1mm);
+\shade [top color=blue, bottom color=blue,middle color=white,shading angle=-15] (c') rectangle ([xshift=1pt]b);
+\end{scope}
+
+\begin{scope}
+\path[clip] (c) -- (d) arc(-70:110:0.9mm and 2mm) -- (c')  arc(90:-90:0.2mm and 1mm);
+\shade [top color=blue, bottom color=blue,middle color=white,shading angle=35] ([xshift=1pt]c') rectangle ([xshift=-2pt]d);
+\end{scope}
+
+\begin{scope}
+\path[clip] (d) arc(-70:290:0.9mm and 2mm);
+\shade [top color=blue, bottom color=blue,middle color=white,shading angle=35] ([xshift=3pt,yshift=1pt]d') rectangle ([xshift=-4pt,yshift=-1pt]d);
+\end{scope}
+
 \end{tikzpicture}
 \end{document}

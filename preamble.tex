@@ -1,4 +1,14 @@
 \makeatletter
+\graphicspath{%
+{./figs/}
+{./common/rawfigs/}
+{./common/ressources/gradient_factors/construction/}
+{./common/ressources/gradient_factors/definition/}
+{./common/ressources/gradient_factors/effet_high/}
+{./common/ressources/gradient_factors/effet_low/}
+{./common/ressources/gradient_factors/recommandation/}
+{./common/ressources/detendeur/}
+}
 \setbeamertemplate{footline}
 {%
   \leavevmode%
@@ -10,7 +20,6 @@
   \end{beamercolorbox}}%
   \vskip0pt%
 }
-\graphicspath{{./figs/}}
 \AtBeginSection[]{
   \begin{frame}
   \vfill
@@ -54,6 +63,79 @@
  }%
 }}
 
+%%%%%%%%%%%%%%%%%%%%%%%
+%%% TOC
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\AtBeginSection[]{%
+\begin{frame}
+\tableofcontents[
+currentsection,
+hideothersubsections
+]
+\end{frame}}
+
+\AtBeginSubsection[]{%
+\begin{frame}
+\tableofcontents[
+currentsection,
+currentsubsection,
+sectionstyle=show/hide,
+subsectionstyle=show/shaded,
+subsubsectionstyle=show/show/hide
+]
+\end{frame}
+}
+
+\AtBeginSubsubsection[]{%
+\begin{frame}
+\tableofcontents[
+currentsection,
+currentsubsection,
+sectionstyle=show/hide,
+subsectionstyle=show/shaded,
+subsubsectionstyle=show/shaded/hide
+]
+\end{frame}
+}
+
+\newcommand{\shadow@section}[1]{%
+  \refstepcounter{section}%
+  \global\advance\beamer@tocsectionnumber by 1\relax%
+   \long\def\secname{#1}%
+   \addtocontents{toc}{\protect\beamer@sectionintoc{\the\c@section}{#1}{\the\c@page}{\the\c@part}%
+   {\the\beamer@tocsectionnumber}}%
+}%
+\newcommand{\zsection}[1]{\shadow@section{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% to get frame height
+% magic number from log
+\newlength{\frametitleheight}
+\setlength{\frametitleheight}{20.4396pt}
+\newcommand{\frameheight}{\textheight - \frametitleheight}
+
+%%%%
+\tikzfading[name=fade inside,inner color=transparent!80, outer color=transparent!30]
+\tikzset{
+ unvisible/.style={opacity=0},
+ visible on/.style={alt={#1{}{unvisible}}},
+ unvisible on/.style={alt={#1{unvisible}{}}},
+ covered/.style={opacity=0.3},
+ uncover on/.style={alt={#1{}{covered}}},
+ cover on/.style={alt={#1{covered}{}}},
+ alt/.code args={<#1>#2#3}{%
+   \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+ },
+ bubble/.style={ball color=white,path fading=fade inside},
+ bobo/.style={starburst,starburst points=10,starburst point height=3pt,draw=red, fill=yellow,minimum width=#1,minimum height=#1,inner sep=2pt}
+}
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+%%%%%
 %%% info
 \colorlet{infoc}{green!60!black}
 % 1. Define the custom color
@@ -71,48 +153,36 @@
 % 3. Define the command (optional, for easier usage like \alert)
 %\newcommand<>{\info}{\begin{infoenv}#2\end{infoenv}}
 
-%%%%
-\newcommand{\Emph}[1]{\textcolor{red}{\textbf{#1}}}
-\newcommand{\EMPH}[1]{\textcolor{green!60!black}{\textbf{\textit{#1}}}}
-\newcommand{\shadowbox}[1]{\raisebox{0pt}[0pt]{\makebox[0pt][c]{#1}}}
-\newcommand{\myhref}[2]{\textcolor{violet}{\href{#1}{#2}}}
-%%%%
-\newcommand{\logoFFESSM}{%
-\includegraphics[height=5mm]{logoFFESSM}%
+\renewcommand{\tableFactor}{0.94}
+
+%% detendeur
+\tikzset{%
+ouverture/.style={shorten <=-0.1pt,shorten >=-0.1pt,line width=2mm,#1},
+coque/.style={gray,line width=3mm},
+membrane/.style={blue,line width=1mm},
+ressort/.style={ultra thick,orange,decoration={coil,aspect=0,segment length=4mm,amplitude=4mm},decorate},
+ressortdet/.style={ultra thick,orange,decoration={coil,aspect=0,segment length=4.25mm,amplitude=4mm},decorate},
+bigressort/.style={line width=1.5mm,orange,decoration={coil,aspect=0,segment length=5mm,amplitude=5mm},decorate},
+smallressort/.style={thick,orange,decoration={coil,aspect=0,segment length=2mm,amplitude=4mm},decorate},
+tinyressort/.style={orange,decoration={coil,aspect=0,segment length=2mm,amplitude=1mm},decorate},
+annot/.style={very thin,white,double=lightgray,line cap=round},
+gilet/.style={green,thick,rounded corners=1pt, nearly transparent},
+piston/.style={darkgray,line width=2mm},
+pistonaxis/.style={piston,line width=1mm},
+pistonthinaxis/.style={piston,line width=0.7mm}
 }
-%%%%
-\newcommand{\zap}[1]{}
+\tikzfading[name=fade down,
+top color=transparent!0,
+bottom color=transparent!100]
+\tikzfading[name=fade right,
+left color=transparent!0,
+right color=transparent!100]
+\colorlet{eau}{cyan!80!blue}
+\colorlet{rhp}{cyan!70}
+\colorlet{rpi}{cyan!20}
+\colorlet{rpa}{cyan!10}
+\colorlet{joint}{green!60!black}
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
 
-\newcommand{\asubsection}[1]{%
-\begin{frame}{}
-\begin{block}{}
-\begin{center}
-\large #1
-\end{center}
-\end{block}
-\end{frame}}
-
-%%%
-
-%\renewcommand{\npunitcommand}[1]{\textrm{#1}}
-\newcommand{\unit}[1]{\npunitcommand{#1}}
-
-%%% to get frame height
-% magic number from log
-\newlength{\frametitleheight}
-\setlength{\frametitleheight}{20.4396pt}
-\newcommand{\frameheight}{\textheight - \frametitleheight}
-
-%%%%
-\tikzset{
- unvisible/.style={opacity=0},
- visible on/.style={alt={#1{}{unvisible}}},
- unvisible on/.style={alt={#1{unvisible}{}}},
- covered/.style={opacity=0.3},
- uncover on/.style={alt={#1{}{covered}}},
- cover on/.style={alt={#1{covered}{}}},
- alt/.code args={<#1>#2#3}{%
-   \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
- }
-}
 \makeatother

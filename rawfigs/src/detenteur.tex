@@ -1,0 +1,92 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[left=0pt,right=0pt,top=1pt,bottom=0pt,paperwidth=8.24cm,paperheight=10.6cm]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing,decorations.markings,arrows.meta,calc}
+\begin{document}
+\tikzset{%
+ouverture/.style={shorten <=-0.2, shorten >=-0.2,white,line width=2mm,#1},
+coque/.style={gray,line width=5mm},
+membrane/.style={blue,line width=1.5mm},
+ressort/.style={ultra thick,orange,decoration={coil,aspect=0,segment length=4.57mm,amplitude=4mm},decorate}
+}
+\colorlet{eau}{cyan!80!blue}
+\colorlet{rhp}{cyan!70}
+\colorlet{rpi}{cyan!20}
+\colorlet{joint}{green!60!black}
+\centering%
+\begin{tikzpicture}[every node/.style={inner sep=0pt}]
+%air & eau
+\fill[eau] (-1.75,5.75) rectangle (1.75,3);
+\fill[rhp] (-2,10) rectangle (2,6);
+\fill[rpi] (-2,3.1) rectangle (2,0);
+
+%contour
+\draw[coque] (-2,10) rectangle (2,0);
+\draw[coque] (-2,6) -- (2,6);
+%% joint piston sur coque
+\draw[joint,line width=0.6mm] (-0.15,9.78) -- ++(0.3,0);
+
+% HP entry
+\draw[ouverture=rhp] (-2.25,9) -- ++(0.5,0);
+\draw[stealth-] (-2,9)-- ++(-0.5,0) node[left=1mm]{Bloc};
+% mano
+\draw[ouverture=rhp] (1.75,9) -- ++(0.5,0);
+\draw[-stealth] (2,9) -- ++(0.5,0) node[right=1mm]{Manomètre};
+% deuxième étage
+\draw[ouverture=rpi] (1.75,2) -- ++(0.5,0);
+\draw[-stealth] (2,2) -- ++(0.5,0) node[align=left,right=1mm]{Deuxième\\étage};
+% direct system
+\draw[ouverture=rpi] (1.75,1) -- ++(0.5,0);
+\draw[-stealth] (2,1) -- ++(0.5,0) node[align=left,right=1mm]{Direct\\system};
+% octopus
+\draw[ouverture=rpi] (-2.25,2) -- ++(0.5,0);
+\draw[stealth-] (-2,2) -- ++(-0.5,0) node[left=1mm]{Octopus};
+
+%% chambre humide
+\draw[ouverture=eau] 
+  (-2.25,5.5) -- ++(0.5,0)
+  (1.75,5.5)  -- ++(0.5,0)
+  (-2.25,4.5) -- ++(0.5,0)
+  (1.75,4.5)  -- ++(0.5,0)
+  (-2.25,3.5) -- ++(0.5,0)
+  (1.75,3.5)  -- ++(0.5,0);
+
+%% piston
+%clapet
+\draw[darkgray, line width=2mm] (-1.75,3.1) -- ++(1.65,0) -- ++(0,6.375) -- ++(0.2,0) --++(0,-6.375) --++(1.65,0);
+\fill[darkgray] ($(-0.05,9.475)+(0,1mm)$) -- ++(0,0.2)  -- ++(-0.15,-0.2) -- ++(0,-0.05) -- ++(0.15,0) -- cycle
+                ($(0.05,9.475) +(0,1mm)$) -- ++(0,0.2) -- ++(0.15,-0.2) -- ++(0,-0.05) -- ++(-0.15,0) -- cycle;
+\draw[rpi,line width=1mm] (0,2.65) -- ($(0,10)-(0,2.5mm)$);
+%
+%%% ressort
+\begin{scope}
+\clip (-0.2,3.3) rectangle ++(0.4,0.27)
+      (-0.2,3.72) rectangle ++(0.4,0.27)
+      (-0.2,4.2)  rectangle ++(0.4,0.27)
+      (-0.2,4.65) rectangle ++(0.4,0.27)
+      (-0.2,5.1)  rectangle ++(0.4,0.27)
+      (-0.2,5.55) rectangle ++(0.25,0.2)
+      (-0.2,5.8)  rectangle ++(-0.5,-2.7)
+      (0.2,5.5)   rectangle ++(0.5,-2.7);
+\draw[ultra thick,orange,decoration={coil,aspect=0,segment length=4.57mm,amplitude=5mm},decorate] (0,3.2) -- (0,6.5);
+\end{scope}
+%
+\fill[white] ($(-1.7,3.1)-(0.5mm,0.5mm)$) rectangle ++(1mm,1mm)
+ ($(1.7,3.1)-(0.5mm,0.5mm)$) rectangle ++(1mm,1mm);
+\fill[joint] (-1.7,3.1) circle (0.5mm)
+ (1.7,3.1)  circle (0.5mm);
+\fill[white] ($(-0.1,6) - (1mm + 8pt,4pt)$)  rectangle ++(8pt,8pt)
+             ($(0.1,6) + (1mm,-4pt)$)  rectangle ++(8pt,8pt);
+\fill[joint] ($(-0.1,6) - (1mm + 4pt,0)$)  circle (4pt)
+             ($(0.1,6) + (1mm + 4pt,0)$)   circle (4pt);
+
+%%%%
+\node at (1,8) {$P_\text{H}$};
+\node at (1,2) {$P_\text{I}$};
+\node at (1,5) {$P_\text{A}$};
+
+\end{tikzpicture}
+\end{document}

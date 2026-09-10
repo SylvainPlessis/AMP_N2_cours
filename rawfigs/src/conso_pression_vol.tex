@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage[paperwidth=4.70cm,paperheight=7.27cm,left=0pt,right=0pt,top=0pt,bottom=0pt]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage[autolanguage]{numprint}
+\usepackage{tikz,twemojis}
+\usetikzlibrary{decorations.pathmorphing,fadings,calc,positioning}
+\pagestyle{empty}
+\begin{document}
+\centering%
+\tikzfading[name=fade inside,inner color=transparent!80, outer color=transparent!30]
+\tikzfading[name=fade down,top color=transparent!80, bottom color=transparent!0]
+\begin{tikzpicture}[y=3mm]
+\fill[draw=none,path fading=fade down,fill=cyan!60] decorate[decoration=snake, segment length=20]{(0,0) -- (3.5,0)} -- ++(0,-23) -- (0,-23) -- cycle;
+\foreach \y in {0,5,...,20}
+{
+  \pgfmathparse{10 / (1 + \y/10)}\let\v\pgfmathresult
+  \pgfmathparse{10 - \v}\let\u\pgfmathresult
+  \pgfmathparse{\u * (1 + \y/10)}\let\us\pgfmathresult
+  \pgfmathparse{\y/10 + 1}\let\fac\pgfmathresult
+  \draw (-2mm,-\y) -- ++(4mm,0) node[pos=0,anchor=east]{\y~m};
+  \node[scale=3,inner sep=0pt] at (1,-\y) {\twemoji{lungs}};
+  \fill[path fading=fade inside, ball color=white,semitransparent] (1,-\y) circle (\v pt);
+}
+\end{tikzpicture}%
+\end{document}

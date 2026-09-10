@@ -55,7 +55,7 @@ continuous: all
         done
 
 $(texfinal): $(alldeps)
-	$(MYPDFLATEX) --draftmode $(call texroot,$@) && $(MYPDFLATEX) $(call texroot,$@)
+	$(MYPDFLATEX) --draftmode $(call texroot,$@) && $(MYPDFLATEX) $(call texroot,$@) && $(MYPDFLATEX) $(call texroot,$@) && $(MYPDFLATEX) $(call texroot,$@)
 	if [ "$@" != "$(call texroot,$@).pdf" ]; then mv "$(call texroot,$@).pdf" "$@"; fi
 
 clean: cleanlatex cleanfigs

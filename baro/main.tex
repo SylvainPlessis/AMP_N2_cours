@@ -14,6 +14,7 @@ dernière.
 \end{frame}
 
 \subsection{\texorpdfstring{$\varphi\upsilon\sigma\iota\kappa\eta$}{Physique}}
+
 \begin{frame}{Ça presse}
 \begin{block}{}
 La pression est une force appliquée sur une surface:
@@ -28,43 +29,49 @@ de même, on ne plante pas un clou dans n'importe quel sens\dots
 
 \begin{frame}{De la physique en plongée}
 \only<1>{%
-Une pression est une force par surface $P = \frac{F}{S}$:
+Une pression est une force par unité de surface $P = \frac{F}{S}$:
 \begin{itemize}
-\item pression en \emph{Pascal} (S.I. [\unit{Pa}] = [\unit{kg \cdot s^{-2} \cdot m^{-1}}]),
-\item force en \emph{Newton} (S.I. [\unit{N}] = [\unit{kg \cdot m \cdot s^{-2}}]),
-\item surface en \emph{mètre carré} (S.I. [\unit{m^2}].
+\item pression en \emph{Pascal} (S.I. [\unit{Pa}] = [\unit{kg \cdot s^{-2} \cdot m^{-1}}]);
+\item force en \emph{Newton} (S.I. [\unit{N}] = [\unit{kg \cdot m \cdot s^{-2}}]);
+\item surface en \emph{mètre carré} (S.I. [\unit{m^2}]).
 \end{itemize}
 }
-\only<2>{%
+\only<2-6>{%
 En plongée on utilise le \emph{bar}: $\numprint[bar]{1}=\numprint[Pa]{100000}$
 
-\numprint[bar]{1} est la force gravitationnelle (a.k.a. le poids) d'une masse
-de \numprint[tonnes]{10} sur \numprint[m^2]{1}: 
-\begin{itemize}
-\item la colonne d'atmosphère ou 
-\item une colonne de \numprint[m]{10} d'eau.
-\end{itemize}
+\uncover<3->{\numprint[bar]{1} est la force gravitationnelle (a.k.a. le poids) sur \numprint[m^2]{1}}
+\begin{itemize}[<+(3)->]
+\item d'une masse de \numprint[tonnes]{10},
+\item de la colonne d'atmosphère ou 
+\item d'une colonne de \numprint[m]{10} d'eau.
+\end{itemize}\centering
+\includegraphics<-3>{un_bar_0}%
+\includegraphics<4>{un_bar_1}%
+\includegraphics<5>{un_bar_2}%
+\includegraphics<6>{un_bar}%
 }%
-\only<3->{\centering
-\includegraphics<3>{un_bar}%
-\includegraphics<4>{pressions}%
-\includegraphics<5>{pressions_fac}%
+\only<7->{\centering
+\includegraphics<7>{pressions}%
+\includegraphics<8>{pressions_fac}%
 }
 \end{frame}
 
 \begin{frame}{Boyle-Mariotte}
 \only<1>{%
-\begin{minipage}{0.35\textwidth}
+\begin{minipage}{0.34\textwidth}
 \[PV = \text{cte}\]
 Lorque la pression augmente, le volume diminue \emph{d'autant},
 et inversement.
 \end{minipage}\hfill
-\begin{minipage}{0.64\textwidth}
+\begin{minipage}{0.655\textwidth}
 \begin{tabular}{cc}
 \includegraphics[width=3cm]{Robert_Boyle} & \includegraphics[width=3cm]{Edme_Mariotte} \\
 Robert Boyle & Edme Mariotte\\
+\tiny Physicien et chimiste irlandais    & \tiny Physicien et botaniste français \\ 
+\makebox[0pt]{\tiny 25 janvier 1627 - 31 décembre 1691} & \tiny $\sim$ 1620 - 12 mai 1684
 \end{tabular}
-\end{minipage}}%
+\end{minipage}
+}%
 \includegraphics<2->{volumePression}\hfill
 \includegraphics<2>{pression_volume}%
 \includegraphics<3>{volume_pression}%
@@ -75,7 +82,7 @@ Robert Boyle & Edme Mariotte\\
 \centering%
 \vspace{6mm}\begin{tikzpicture}[overlay]
 \node (pic) at (0,0) {\includegraphics[width=10cm]{plongeuse}};
-\node[above right=3pt,font=\scriptsize] at (pic.south west) {image: Freepik.com};
+\node[above right,violet!60!black,font=\scriptsize] at (pic.south west) {brgfx (Magnific)};
 %%%%% zones
 \begin{scope}[every path/.style={fill=red,opacity=0.6}]
 %%% sinus
@@ -127,6 +134,7 @@ Robert Boyle & Edme Mariotte\\
 \end{frame}
 
 \begin{frame}{Les sinus}
+\only<-5>{%
 \begin{tikzpicture}
 \node (fig) at (0,0) {\includegraphics[width=10cm]{sinus}};
 %
@@ -149,7 +157,49 @@ Robert Boyle & Edme Mariotte\\
 %
 \node<4->[uncover on=<4>, align=center] (sphe) at (3.2,1.5) {Sinus\\sphénoïdaux};
 \draw<4->[uncover on=<4>, Circle-] (3.2,-0.1) -- (sphe);
+\end{tikzpicture}}%
+\only<6->{%
+\begin{minipage}[c][\frameheight]{0.7\textwidth}
+\begin{block}<uncover@6>{La situation}
+\only<7->{\tiny}%
+Les sinus sont des cavités osseuses qui ne peuvent pas
+s'équilibrer activement! Il faut donc nécessairement
+que les conduits soient dégagés.
+\end{block}
+
+\begin{alertblock}<uncover@7>{Symptômes}
+\only<6,8->{\tiny}%
+\begin{itemize}
+\item Douleurs;
+\item petits saignements.
+\end{itemize}
+\end{alertblock}
+
+\begin{exampleblock}<uncover@8>{L'attitude}
+\only<-7>{\tiny}%
+\begin{itemize}
+\item Ne pas plonger enrhumé!
+\item Se dégager les sinus avant la plongée (moucher/rincer).
+\item Si douleur, varier doucement la profondeur (montée comme descente).
+\end{itemize}
+\end{exampleblock}
+
+\end{minipage}\hfill
+\begin{minipage}{0.26\textwidth}
+\includegraphics[width=\textwidth]{sinus}
+\end{minipage}
+}%
+\only<9>{%
+\begin{tikzpicture}[overlay, remember picture]
+\node at (current page.center){
+\begin{tikzpicture}[baseline=(current bounding box.center),every node/.style={fill opacity=0.7,text opacity=1}]
+  \node[draw=none,white,fill=red,
+    font=\bf\Large,text width=\textwidth,align=center,
+    right=20pt,rounded corners=10pt] at (0,0) {On ne prend pas de médicament pour se dégager les sinus et pouvoir descendre~! On va se retrouver bloqué au fond~!};
 \end{tikzpicture}
+};
+\end{tikzpicture}%
+}
 \end{frame}
 
 \begin{frame}{Les oreilles}
@@ -164,8 +214,10 @@ Robert Boyle & Edme Mariotte\\
 \node<2>[draw,thick,ellipse,pin={45:Souvent fermée},rotate=-40] at (8.2,-0.4){\rule{30pt}{0pt}};
 \draw<2>[cyan,-stealth,decorate,decoration={zigzag,segment length=9pt,amplitude=2pt}] (9.1,-1.2) -- ++(135:1.1cm) node[pos=0,below right] {$P_\text{mâchoire}$};
 \draw<3-5>[stealth-,thick,blue] (5.5,0.7) --++(200:1) node[pos=0.3,above,font=\bf]{+};
-\draw<3-5>[-stealth,cyan,decorate,decoration={zigzag,amplitude=1pt,segment length=6pt, post=lineto, post length=2pt}] (7,0.45) --++(170:0.8) node[pos=0.7,above,font=\tiny]{+};
+\draw<3-4>[-stealth,cyan,decorate,decoration={zigzag,amplitude=1pt,segment length=6pt, post=lineto, post length=2pt}] (7,0.45) --++(170:0.8) node[pos=0.7,above,font=\tiny]{+};
+\draw<5>[-stealth,cyan,thick] (7,0.45) --++(170:0.8) node[pos=0.7,above,font=\bf]{+};
 \node<4>[regular polygon, regular polygon sides=3,white,rounded corners=5pt,above=10pt,inner sep=0pt,font=\large\bf,fill=red,fill opacity=0.7,text opacity=1] at (tym){!};
+\node<4>[starburst,starburst point height=4pt, draw=red,fill=yellow,font=\tiny\bf,inner sep=0pt] at (tym){Aïe};
 \draw<5>[-stealth,cyan,thick]  (9.1,-1.2) -- ++(135:1.1cm) node[pos=0,below right] {Équilibrer} node[pos=0.5,above,font=\bf]{+};
 \end{tikzpicture}
 \end{frame}
@@ -176,7 +228,7 @@ The ET can be considered a continuous organ with the middle
 ear and mastoid cells. The tube is usually divided into three
 sections when described anatomically: cartilaginous, osseous
 and junctional, where the two main parts overlap. Particularly
-in adults, \emph<2>{the ET can assume a gently curving, inverted ‘S’
+in adults, \emph<2>{the ET can assume a gently curving, inverted ‘S'
 shape}, although \textbf<2>{there is a range} from \textbf<2>{almost straight} to \textbf<2>{acutely
 curved} [10].\\\smallskip
 \rule{4cm}{0.1pt}
@@ -199,7 +251,7 @@ doi: 10.1007/s00234-016-1663-4.}}%
 };
 \node[fit={(a) (b)}] {$\sim \numprint{50}$\,\%};
 \draw (ul.south west) -- (ul.south -| a.west);
-\node<4>[text width=8cm,align=center,red,fill=white,opacity=0.7,text opacity=1,font=\bf\huge] at (0,0) {Vous ne savez pas où vous vous situez~! DOUCEMENT SUR LES OREILLES~!};
+\node<4>[text width=8cm,align=center,red,fill=white,opacity=0.7,rounded corners=10pt,text opacity=1,font=\bf\huge] at (0,0) {Vous ne savez pas où vous vous situez~! DOUCEMENT SUR LES OREILLES~!};
 \end{tikzpicture}}
 \end{frame}
 
@@ -207,61 +259,308 @@ doi: 10.1007/s00234-016-1663-4.}}%
 \centering\scriptsize%
 \vspace{-10pt}\makebox[0pt][c]{%
 \begin{tabular}{
->{\centering}p{40pt}
->{\centering}p{40pt}
->{\centering}p{43pt}
->{\centering}p{55pt}
->{\centering}p{37pt}
+>{\centering}p{40pt}@{\hspace{10pt}}
+>{\centering}p{40pt}@{\hspace{10pt}}
+>{\centering}p{48pt}@{\hspace{10pt}}
+>{\centering}p{55pt}@{\hspace{10pt}}
+>{\centering}p{48pt}@{\hspace{10pt}}
 >{\centering\arraybackslash}p{65pt}
 }\toprule
-          & Valsalva & Déglutition & \cellcolor{green}Frenzel & \cellcolor{green}Toynbee & \cellcolor{green} B.T.V. Delonca \\\midrule
-Nez       & pincé    & libre       & pincé   & pincé   & libre \\
-Bouche    & fermée   & fermée      & libre   & fermée  & libre \\
-Glotte    & ouverte  & fermée      & fermée  & fermée  & libre \\\addlinespace
-Action    & souffler dans le nez & avaler sa salive & langue plaquée contre palais, prononcer KE & avaler salive & ouverture du maxillaire inférieur (baillement) \\\addlinespace
+          & Valsalva                         & \cellcolor{green}Déglutition & \cellcolor{green}Frenzel                   & \cellcolor{green}Toynbee    & \cellcolor{green} B.T.V. Delonca \\\midrule
+Nez       & pincé                            & libre                        & pincé                                      & pincé                       & libre \\
+Bouche    & fermée                           & fermée                       & libre                                      & fermée                      & libre \\
+Glotte    & ouverte                          & fermée                       & fermée                                     & fermée                      & libre \\\addlinespace
+Action    & souffler dans le nez             & avaler sa salive             & langue plaquée contre palais, prononcer KE & avaler sa salive            & ouverture du maxillaire inférieur (baillement) \\\addlinespace
 Résultat sur l'oreille 
-moyenne   & surpression d'origine pulmonaire & équipression & surpression d'origine rhinopharyngée & dépression & équipression \\\addlinespace
-Exécution & facile  & très facile  & difficile avec un détendeur & très facile & difficile \\
-Sécurité  & moyenne & moyenne      & bonne   & bonne   & parfaite \\\midrule
-          & descente & descente et remontée & descente & remontée & descente et remontée \\\bottomrule
+moyenne   & surpression d'origine pulmonaire & équipression                 & surpression d'origine rhinopharyngée       & dépression                  & équipression \\\addlinespace
+Exécution & facile                           & difficile avec un détendeur  & difficile avec un détendeur                & difficile avec un détendeur & difficile \\\addlinespace
+Sécurité  & moyenne                          & bonne                        & bonne                                      & bonne                       & parfaite \\\midrule
+          & descente                         & descente et remontée         & descente                                   & remontée                    & descente et remontée \\\bottomrule
 \end{tabular}%
 }
 \end{frame}
 
+\begin{frame}{Exercices pour mieux équilibrer}
+
+Il existe des exercices pour améliorer son équilibrage (\og \textsl{améliorer la perméabilité
+(capacité à s'ouvrir) de la trompe d'Eustache}\fg).
+
+À retrouver sur \chref{https://www.plongee-plaisir.com/fr/oreilles/}{\bf plongée plaisir}
+\end{frame}
+
+\begin{frame}{\textit{In fine}}
+\begin{minipage}[c][\frameheight]{0.65\textwidth}
+\begin{block}<only@1>{Symptômes}
+\begin{itemize}
+\item Douleurs;
+\item sensation d'oreille bouchée;
+\item acouphènes;
+\item vertiges;
+\item vomissements;
+\item saignements.
+\end{itemize}
+\end{block}%
+\begin{exampleblock}<only@2>{Comportement: avant la plongée}
+\begin{itemize}
+\item Éviter de plonger enrhumé;
+\item protéger les oreilles;
+\item éviter le froid, le vent\dots
+\end{itemize}
+\end{exampleblock}%
+\begin{exampleblock}<only@3>{Comportement: à la descente}
+\begin{itemize}
+\item Équilibrer dès les premiers mètres (et même la surface) et régulièrement
+  pendant toute la descente et surtout \emph{avant de ressentir une gêne};
+\item privilégier les variations lentes de profondeur;
+\item pas de Valsalva brutal;
+\item si difficulté, remonter de quelques mètres, puis descendre lentement,
+  tête en haut de préférence (ne pas forcer) \emph{préférer stopper la plongée
+  plutôt que de risquer une lésion de l'oreille}.
+\end{itemize}
+\end{exampleblock}%
+\begin{exampleblock}<only@4>{Comportement: à la remontée}
+\begin{itemize}
+\item Privilégier les variations lentes de profondeur;
+\item pas de Valsava;
+\item si difficulté, redescendre de quelques mètres, puis remonter lentement
+  (ne pas forcer).
+\end{itemize}
+\end{exampleblock}%
+\begin{exampleblock}<only@5>{Comportement: après la plongée}
+\begin{itemize}
+\item Rincer, sécher et protéger les oreilles;
+\item éviter le froid, le vent\dots
+\end{itemize}
+\end{exampleblock}%
+\begin{alertblock}<only@6>{Si souci}
+\warning[Alerter, avertir le GP, le DP, consulter un ORL.]
+\end{alertblock}
+\end{minipage}\hfill
+\begin{minipage}{0.33\textwidth}
+\includegraphics[width=\textwidth]{oreille_nue}
+\end{minipage}
+\end{frame}
+
 \begin{frame}{Le masque}
+\centering
+\only<1-2>{%
+\begin{tikzpicture}
+\node[inner sep=0pt] at (0,0) {\includegraphics[height=\frameheight]{masque}};%
+\draw<2>[-stealth,thick,blue] (-0.3,0.3) -- ++(0.5,0) node[above,pos=0.5,font=\bf]{+};
+\draw<2>[-stealth,thick,cyan] (0.5,-0.25) -- ++(-120:0.5) node[left,pos=0.5,font=\bf]{+};
+\end{tikzpicture}
+}%
+\only<3-5>{%
+\begin{minipage}[c][\frameheight]{0.65\textwidth}
+\begin{block}<3>{Plaquage du masque}
+Le masque s'écrase et \og aspire\fg\ en particulier les
+yeux.
+\end{block}%
+\begin{alertblock}<4>{Risques}
+\begin{itemize}
+\item Douleurs;
+\item rougeurs autour des yeux et du nez;
+\item saignement du nez;
+\item hématome autour des yeux (\oe il au beurre noir).
+\end{itemize}
+\end{alertblock}%
+\begin{exampleblock}<5>{Prévention}
+Souffler par le nez durant la descente.
+\end{exampleblock}
+\end{minipage}\hfill
+\begin{minipage}{0.32\textwidth}
+\includegraphics[width=\textwidth]{masque}
+\end{minipage}
+}%
+\only<6>{Un bel exemple\\\chref{https://www.youtube.com/watch?v=XQ8NmFtdQWQ}{Analyse} (Argonaute Plongée),
+\chref{https://www.youtube.com/watch?v=u5nY58I284Y}{vidéo incident} (Paul Cardone)\\}
+\includegraphics<6>[height=6cm]{mask_squeeze}%
 \end{frame}
 
 \begin{frame}{Les intestins}
+\begin{minipage}[c][\frameheight]{0.6\textwidth}
+\begin{block}<1>{Des bulles\dots}
+\only<2->{\tiny}%
+L'air avalé et les gaz de fermentation provoquent
+des bulles dans l'estomac et les intestins.
+\end{block}
+\begin{alertblock}<2-3>{\dots\ qui gonflent\dots}
+\only<1,4>{\tiny}%
+À la remontée, ces gaz se dilatent et ça fait
+mal au ventre!
+\end{alertblock}
+\begin{exampleblock}<4>{Prévenir/guérir}
+\only<-3>{\tiny}%
+On évite les aliments qui fermentent la veille (féculents) et les boissons
+gazeuses, on essaie de ne pas déglutir/avaler de l'air pendant la plongée.
+
+On vide!
+\end{exampleblock}
+\end{minipage}\hfill
+\begin{minipage}{0.35\textwidth}
+\begin{tikzpicture}
+\node[inner sep=-0.4pt] (int) at (0,0) {\includegraphics[height=\frameheight]{intestin}};%
+\coordinate (b1) at (-0.3,-1.9);
+\coordinate (b2) at (0.4,-2.1);
+\coordinate (b3) at (0.5,-1.6);
+\coordinate (b4) at (0.1,-1.2);
+\coordinate (b5) at (0.4,-0.5);
+\node<3>[bobo=6pt,inner sep=3pt] at (b1) {};
+\node<3>[bobo=4pt] at (b2) {};
+\node<3>[bobo=2.8pt] at (b3) {};
+\node<3>[bobo=4.6pt] at (b4)  {};
+\node<3>[bobo=5pt] at (b5)  {};
+\foreach \b in {1,...,5}{
+  \foreach \a in {0,60,...,330}{
+    \draw<2>[-stealth,shorten <=1pt] (b\b) -- ++(\a:8pt);
+  }
+}
+\shade<-3>[bubble] (b1) circle (3pt);
+\shade<-3>[bubble] (b2) circle (2pt);
+\shade<-3>[bubble] (b3) circle (1.4pt);
+\shade<-3>[bubble] (b4) circle (2.3pt);
+\shade<-3>[bubble] (b5) circle (2.5pt);
+\shade<4>[bubble] (-0.8,2) circle (2.5pt);
+\shade<4>[bubble] (-0.9,2.1) circle (2.5pt);
+\shade<4>[bubble] (-1,2.3) circle (2.5pt);
+\shade<4>[bubble] (0.1,-3) circle (2.5pt);
+\shade<4>[bubble] (0.3,-2.9) circle (2.5pt);
+\shade<4>[bubble] (0.5,-2.8) circle (2.5pt);
+\path[use as bounding box] (int.south east) rectangle (int.north west);
+\end{tikzpicture}
+\end{minipage}
 \end{frame}
 
 \begin{frame}{Les dents}
+\begin{minipage}[c][\frameheight]{0.52\textwidth}
+\begin{block}<1>{Le problème}
+\only<2->{\tiny}%
+Si on a une ou des caries ou un plombage non étanche, il
+y a un risque qu'une bulle s'y coince!
+\end{block}
+\begin{alertblock}<2>{À la descente/remontée\dots}
+\only<1,3>{\tiny}%
+On va avoir un effet de dépression/surpression qui va
+comprimer la dent. C'est très douleureux!
+\end{alertblock}
+\begin{exampleblock}<3>{Prévention/gestion}
+\only<-2>{\tiny}%
+Aller régulièrement (une fois l'an) chez le dentiste.
+S'il y a douleur, changer de profondeur lentement,
+et se préparer à avoir mal pour sortir\dots
+\end{exampleblock}
+\end{minipage}\hfill
+\begin{minipage}{0.45\textwidth}
+\begin{tikzpicture}
+\node<-2>[inner sep=-0.4pt] (int) at (0,0) {\includegraphics[height=\frameheight]{dent_ko}};
+\node<3>[inner sep=-0.4pt] (int) at (0,0) {\includegraphics[width=\textwidth]{dent_ok}};
+\node<2>[starburst,starburst point height=6pt, draw=red,fill=yellow,font=\scriptsize\bf,inner sep=2pt] at (-1.1,2.3) {Aïe};
+\shade[visible on=<1>,bubble] (-1.1,2.3) circle (2pt);
+\path[use as bounding box] (int.south east) rectangle (int.north west);
+\end{tikzpicture}
+\end{minipage}
 \end{frame}
 
 \begin{frame}{Les poumons}
+\includegraphics<1>[width=\textwidth]{poumons}
+\only<2->{%
+\begin{minipage}[c][\frameheight]{0.65\textwidth}
+\begin{block}<only@2>{Le mécanisme}
+À la remontée, \\flux d'air sortant non suffisant $\Rightarrow$
+les alvéoles atteignent leur limite d'élasticité:
+\begin{itemize}
+\item distension;
+\item rupture;
+\item passage de bulles directement dans le système sanguin.
+\end{itemize}
+\end{block}%
+\begin{alertblock}<only@3>{Les symptômes}
+\begin{itemize}
+\item Douleurs dans la poitrine;
+\item gêne respiratoire;
+\item crachats \og spumeux\fg\ (traces de sang).
+\end{itemize}
+\end{alertblock}%
+\begin{alertblock}<only@3>{Arrivée sur le bateau}
+\begin{itemize}
+\item État de choc;
+\item convulsions;
+\item troubles de la parole, de la vision, paralysie.
+\end{itemize}
+\end{alertblock}%
+\begin{exampleblock}<only@4>{La prévention}
+\begin{itemize}
+\item \EMPH[red]{Ne jamais bloquer la respiration}, y  compris lors de remontée d’urgence sans embout;
+\item ventiler normalement;
+\item ne jamais donner d’air à un apnéiste non averti, y compris en piscine.
+\end{itemize}
+\end{exampleblock}%
+\begin{alertblock}<only@5>{Si accident}
+\begin{itemize}
+\item Appeler les secours;
+\item donner de l'\ce{O2};
+\item hydrater.
+\end{itemize}
+\end{alertblock}%
+\end{minipage}\hfill
+\begin{minipage}{0.3\textwidth}
+\includegraphics[width=\textwidth]{baro_poumons}
+\end{minipage}}
 \end{frame}
 
 \subsection{Consommation d'air}
 \begin{frame}{Consommation}
-On respire un volume constant à pression extérieure (voir schéma détendeur)
-donc plus la pression augmente, plus on augmente la quantité d'air respiré. 
-\begin{itemize}
-\item calcul autonomie,
-\item si rythme respiratoire évolue, que se passe-t-il?
-\end{itemize}
+\begin{block}<only@1>{Le triste constat}
+On respire un volume constant à pression extérieure (principe du détendeur), 
+plus la pression augmente, plus on augmente la quantité d'air respiré. 
+\end{block}
+\only<2->{%
+\begin{minipage}{0.5\textwidth}
+\begin{block}{}
+\Large Quantité \textit{v/s} volume
+\end{block}
+
+\bigskip\centering
+
+\tikz\fill[ball color=white] circle (5pt) node[right=10pt,align=left,text width=4.85cm, inner xsep=0pt] {Quantité d'air poumon plein en surface};
+\tikz\fill[visible on=<3->, ball color=blue] circle (5pt) node[right=10pt,align=left,text width=4.85cm, inner xsep=0pt] {Quantité d'air à ajouter en profondeur};
+\tikz\fill[visible on=<4>, ball color=cyan]  circle (5pt) node[right=10pt,align=left,text width=4.85cm, inner xsep=0pt] {Volume équivalent surface de la quantité d'air à ajouter en profondeur};
+\end{minipage}\hfill
+\begin{minipage}{0.49\textwidth}
+\includegraphics<2>[height=\frameheight-1pt]{conso_pression_vol}%
+\includegraphics<3>[height=\frameheight-1pt]{conso_pression_vol2}%
+\includegraphics<4>[height=\frameheight-1pt]{conso_pression}%
+\end{minipage}
+}
 \end{frame}
 
 \begin{frame}{Remplir les poumons sous pression}
-\begin{itemize}
-\item Respiration, de \numprint[l\cdot min^{-1}]{12} à \numprint[l\cdot min^{-1}]{20},
+\only<-3>{\begin{itemize}
+\item Ventilation, de \numprint[l\cdot min^{-1}]{12} à \numprint[l\cdot min^{-1}]{20};
 \item bouteille \numprint[l]{12} à \numprint[bar]{200};
-\item[$\Rightarrow$] \numprint[l]{2400}
+\item[$\Rightarrow$] \numprint[l]{2400} en volume équivalent surface (VeS).
 \end{itemize}
-\small
-\begin{tabular}{l>{\raggedright}p{1.8cm}>{\raggedright}p{2.2cm}>{\raggedright\arraybackslash}p{3cm}}\toprule
-                 & Volume non respirable (\npunitcommand{l}) & Respiration en volume surface (\npunitcommand{l\cdot min^{-1}}) & Temps pour vider la bouteille (\npunitcommand{min})\\\midrule
-surface          & \numprint{12}      & \numprint{12}--\numprint{20}  & \numprint{199}--\numprint{119.4} \\
-\numprint[m]{10} & \numprint{24}      & \numprint{24}--\numprint{40}  & \numprint{99}--\numprint{59.4}  \\ % 24 s
-\numprint[m]{20} & \numprint{36}      & \numprint{36}--\numprint{60}  & \numprint{65.7}--\numprint{39.4} \\ % 42 s
-\numprint[m]{40} & \numprint{60}      & \numprint{60}--\numprint{100} & \numprint{39}--\numprint{23.4} \\\bottomrule
-\end{tabular}
+\visible<2->{%
+\def\redme{\only<3>{\color{red}}}
+\small\centering
+\begin{tabular}{l>{\raggedright}p{1.8cm}>{\raggedright}p{2.2cm}>{\raggedright\arraybackslash}p{3cm}l}\toprule
+                 & VeS non respirable (\npunitcommand{l}) & Ventilation en VeS (\npunitcommand{l\cdot min^{-1}}) & Temps pour vider la bouteille (\npunitcommand{min})\\\midrule
+surface          & \numprint{12}      & \numprint{12}--\numprint{20}  & \numprint{199}--\redme\numprint{119.4} & \visible<3>{\color{red}$\times\numprint{1}$}\\
+\numprint[m]{10} & \numprint{24}      & \numprint{24}--\numprint{40}  & \numprint{99}--\redme\numprint{59.4}   & \visible<3>{\color{red}$\times\numprint{2}$} \\ % 24 s
+\numprint[m]{20} & \numprint{36}      & \numprint{36}--\numprint{60}  & \numprint{65.7}--\redme\numprint{39.4} & \visible<3>{\color{red}$\times\numprint{3}$} \\ % 42 s
+\numprint[m]{40} & \numprint{60}      & \numprint{60}--\numprint{100} & \numprint{39}--\redme\numprint{23.4}   & \visible<3>{\color{red}$\times\numprint{5}$}\\\bottomrule
+\end{tabular}}}%
+\begin{alertblock}<only@4->{Essoufflement}
+Un essoufflement augmente d'un facteur \numprint{4}
+la vitesse de ventilation!
+\end{alertblock}
+\only<4->{\visible<5>{%
+\medskip\centering
+\begin{tabular}{l>{\bf\color{red}}l}\toprule
+                 & \parbox{3cm}{\mdseries\color{black}Temps pour vider une bouteille \emph{pleine} (\npunitcommand{min})}\\\midrule
+surface          & \numprint{30} (\numprint[bar\cdot min^{-1}]{6.5})\\
+\numprint[m]{10} & \numprint{15} (\numprint[bar\cdot min^{-1}]{13})\\
+\numprint[m]{20} & \numprint{10} (\numprint[bar\cdot min^{-1}]{20})\\
+\numprint[m]{40} & \numprint{6}\textcolor{white}{0} (\numprint[bar\cdot min^{-1}]{33})\\\bottomrule
+\end{tabular}}}
 \end{frame}

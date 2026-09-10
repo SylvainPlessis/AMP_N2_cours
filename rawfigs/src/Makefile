@@ -42,9 +42,9 @@ continuous: all
 $(texfinal): $(figures)
 
 ../../figs/%.pdf: %.tex
-	@echo "$@ <- $(shell echo $? | cut -d' ' -f1)"
+	@echo "$@ <- $(shell echo $@ | cut -d'/' -f 4 | sed -e 's/pdf/tex/g')"
 	@mkdir -p $(dir $@)
-	@$(MYPDFLATEX) $(shell echo $? | cut -d' ' -f1) && $(MYPDFLATEX) $(shell echo $? | cut -d' ' -f1) && mv $(shell echo $@ | cut -d'/' -f4) ../../figs/
+	@$(MYPDFLATEX) $(shell echo $@ | cut -d'/' -f 4 | sed -e 's/pdf/tex/g') && $(MYPDFLATEX) $(shell echo $@ | cut -d'/' -f 4 | sed -e 's/pdf/tex/g') && mv $(shell echo $@ | cut -d'/' -f4) ../../figs/
 
 
 srcfigs/%.pdf: rawsrcfigs/%.dia

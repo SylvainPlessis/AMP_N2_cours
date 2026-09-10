@@ -4,9 +4,13 @@
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
 \usepackage[autolanguage]{numprint}
-\usepackage{graphicx,booktabs,datetime,pdfpages,tikz,amsmath,booktabs,array,colortbl}
-\usetikzlibrary{decorations.pathmorphing,matrix,fit,arrows.meta,shapes.geometric}
-\input{../../../common/preamble}
+\usepackage[version=4]{mhchem}
+\usepackage{graphicx,booktabs,datetime,pdfpages,tikz,amsmath,booktabs,array,colortbl,twemojis}
+\usetikzlibrary{decorations.pathmorphing,matrix,fit,arrows.meta,shapes.geometric,shapes.symbols,shapes.misc,fadings,positioning,intersections,calc}
+\usepackage{desat}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\input{./common/preamble}
 \input{preamble}
 \begin{document}
 
@@ -25,15 +29,19 @@
 \titlepage
 \end{frame}
 
-\begin{frame}
-\tableofcontents
-\end{frame}
-
-\section{Réglementation}
+\zsection{Réglementation}
 %\input{reglementation/main}
 
-\section{Pression}
-\input{baro/main}
+\zsection{Pression}
+%\input{baro/main}
+
+\zsection{Dissolution}
+%\input{diss/main}
+
+\section{Matériel}
+\input{materiel/main}
+
+\zsection{Biologie et environnement marin(e)}
 
 \begin{frame}{Merci de votre attention}
 \begin{block}{}
@@ -41,5 +49,8 @@
 \Huge Des questions?
 \end{block}
 \end{frame}
+
+%\appendix
+%\input{./common/physique}
 
 \end{document}
