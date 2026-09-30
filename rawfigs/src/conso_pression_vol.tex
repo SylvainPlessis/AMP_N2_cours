@@ -15,13 +15,14 @@
 \fill[draw=none,path fading=fade down,fill=cyan!60] decorate[decoration=snake, segment length=20]{(0,0) -- (3.5,0)} -- ++(0,-23) -- (0,-23) -- cycle;
 \foreach \y in {0,5,...,20}
 {
-  \pgfmathparse{10 / (1 + \y/10)}\let\v\pgfmathresult
-  \pgfmathparse{10 - \v}\let\u\pgfmathresult
-  \pgfmathparse{\u * (1 + \y/10)}\let\us\pgfmathresult
-  \pgfmathparse{\y/10 + 1}\let\fac\pgfmathresult
+  %% volume
+  \pgfmathparse{600 / (1 + \y/10)}\let\v\pgfmathresult
+  \pgfmathparse{600 - \v}\let\u\pgfmathresult
+  %% rayon
+  \pgfmathparse{(3/4 * \v)^(1/3)}\let\rv\pgfmathresult
   \draw (-2mm,-\y) -- ++(4mm,0) node[pos=0,anchor=east]{\y~m};
   \node[scale=3,inner sep=0pt] at (1,-\y) {\twemoji{lungs}};
-  \fill[path fading=fade inside, ball color=white,semitransparent] (1,-\y) circle (\v pt);
+  \fill[path fading=fade inside, ball color=white,semitransparent] (1,-\y) circle (\rv pt);
 }
 \end{tikzpicture}%
 \end{document}
