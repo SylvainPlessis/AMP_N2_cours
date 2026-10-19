@@ -1,0 +1,11 @@
+\documentclass{article}
+\usepackage[top=0pt,bottom=0pt,left=0pt,right=0pt,paperheight=7cm,paperwidth=2.8cm]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+\input{figspreamble}
+\begin{document}
+\centering\begin{tikzpicture}[every path/.append style={thick}]
+\node[inner sep=0pt] (pic) at (0,0) {\includegraphics[height=7cm,viewport=0 0 105 310,clip]{combi_src}};
+\node[above,inner sep=0pt,violet,font=\small] at (pic.south) {brgfx};
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage[top=0pt,bottom=0pt,left=0pt,right=0pt,paperheight=7cm,paperwidth=2.8cm]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+\input{figspreamble}
+\begin{document}
+\centering\begin{tikzpicture}[every path/.style={thick,stealth-,cyan}]
+\node[inner sep=0pt] (pic) at (0,0) {\includegraphics[height=7cm,viewport=310 0 424 341,clip]{combi_src}};
+\node[above,inner sep=0pt,violet,font=\small] at (pic.south) {brgfx};
+\draw (-25:1) arc(180:270:10pt and 15pt);
+\draw (205:1) arc(0:-90:10pt and 15pt);
+\draw (280:2.9) arc(180:270:15pt and 10pt);
+\draw (260:2.9) arc(0:-90:15pt and 10pt);
+\draw (86:1.7) arc(180:90:15pt and 10pt);
+\draw (94:1.7) arc(0:90:15pt and 10pt);
+
+\begin{scope}[every path/.append style={nearly transparent}]
+\draw[thin,red,decorate,decoration={snake,segment length=4pt,amplitude=1pt,post length=2pt},-stealth] (60:1.7) -- ++(20:12pt);
+\draw[thin,red,decorate,decoration={snake,segment length=4pt,amplitude=1pt,post length=2pt},-stealth] (120:1.7) -- ++(160:12pt);
+\draw[thin,red,decorate,decoration={snake,segment length=4pt,amplitude=1pt,post length=2pt},-stealth] (20:1) -- ++(20:12pt);
+\draw[thin,red,decorate,decoration={snake,segment length=4pt,amplitude=1pt,post length=2pt},-stealth] (160:1) -- ++(160:12pt);
+\draw[thin,red,decorate,decoration={snake,segment length=4pt,amplitude=1pt,post length=2pt},-stealth] (-60:1.3) -- ++(20:12pt);
+\draw[thin,red,decorate,decoration={snake,segment length=4pt,amplitude=1pt,post length=2pt},-stealth] (240:1.3) -- ++(160:12pt);
+\draw[thin,red,decorate,decoration={snake,segment length=4pt,amplitude=1pt,post length=2pt},-stealth] (-72:2.2) -- ++(20:12pt);
+\draw[thin,red,decorate,decoration={snake,segment length=4pt,amplitude=1pt,post length=2pt},-stealth] (252:2.2) -- ++(160:12pt);
+
+\draw[thin,yellow,-stealth] (92:1.85) .. controls +(0,0.2) and +(0.5,0) .. ++(-1,0.5);
+\draw[thin,yellow,-stealth] (88:1.85) .. controls +(0,0.2) and +(-0.5,0) .. ++(1,0.5);
+\draw[thin,dashed,yellow,-stealth] (90:1.85) -- ++(0,-0.5);
+\end{scope}
+\end{tikzpicture}
+\end{document}

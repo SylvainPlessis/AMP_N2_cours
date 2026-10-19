@@ -45,7 +45,7 @@ respectant les procédures}.\bigskip
 \begin{frame}{Buller en plongée\dots}
 \centering%
 \begin{tikzpicture}
-\node<-3>[inner sep=0pt,outer sep=0pt] (sche) at (0,0) {\includegraphics[height=\frameheight]{circulation_sanguine}};
+\node<-3>[inner sep=0pt,outer sep=0pt] (sche) at (0,0) {\includegraphics[height=211pt]{circulation_sanguine}};
 \node<4>[inner sep=0pt,outer sep=0pt] at (0,0) {\includegraphics{lungs_interface}};
 \node[visible on=<2>,left]  at (-2.3,2) {Petite circulation};
 \node[visible on=<3>,right] at (2.3,-0.5) {Grande circulation};
@@ -203,27 +203,29 @@ Dépend de l'état physique et psychologique de la personne.
 \centering%
 \begin{tikzpicture}[y=-7pt,x=12pt]
 \path[use as bounding box] (-2.5,25) rectangle (22.5,-1);
-\shade[top color=white,bottom color=cyan] (0,0) -- (1,20) -- (10,20) -- (14.5714,20) -- (17,3) -- (18,3) -- (19,0);
-\draw (-1,0) -- (0,0) -- (1,20) -- (10,20) -- (12,10) -- (16,10) -- (17,3) -- (18,3) -- (19,0) -- (20,0);
+\shade[top color=white,bottom color=cyan] (0,0) -- (1,20) -- (10,20) -- (15.5833,20) -- (17,3) -- (18,3) -- (19,0);
+\draw (-1,0) -- (0,0) -- (1,20) -- (10,20) -- (12,15) -- (16,15) -- (17,3) -- (18,3) -- (19,0) -- (20,0);
 \node<1>[xscale=-1,anchor=south,inner sep=0pt] at (-1,0)   {\twemoji{woman walking}};
 \node<2> at (0,0)      {\twemoji{mermaid}};
 \node<3> at (0.5,10)   {\twemoji{mermaid}};
 \node<4> at (5,20)     {\twemoji{mermaid}};
-\node<5> at (14,10)    {\twemoji{mermaid}};
-\node<6> at (16.5,6.5) {\twemoji{mermaid}};
+\node<5> at (14,15)    {\twemoji{mermaid}};
+\node<6> at (16.5,9.5) {\twemoji{mermaid}};
 \node<7> at (17,3)     {\twemoji{mermaid}};
 \node<8> at (18,3)     {\twemoji{mermaid}};
 \node<9> at (19,0)     {\twemoji{mermaid}};
 \node<10>[xscale=-1,anchor=south,inner sep=0pt] at (20,0)   {\twemoji{woman walking}};
 %
-\node<-2,10>[anchor=south, inner sep=0pt]  at (19,20) {\includegraphics[height=3cm]{lungs_sat_00}};
-\node<3>[anchor=south, inner sep=0pt]      at (19,20) {\includegraphics[height=3cm]{lungs_sat_30}};
-\node<4>[anchor=south, inner sep=0pt]      at (19,20) {\includegraphics[height=3cm]{lungs_sat_3a}};
-\node<5>[anchor=south, inner sep=0pt]      at (19,20) {\includegraphics[height=3cm]{lungs_sat_2a}};
-\node<6>[anchor=south, inner sep=0pt]      at (19,20) {\includegraphics[height=3cm]{lungs_sat_2b}};
-\node<7>[anchor=south, inner sep=0pt]      at (19,20) {\includegraphics[height=3cm]{lungs_sat_1b}};
-\node<8>[anchor=south, inner sep=0pt]      at (19,20) {\includegraphics[height=3cm]{lungs_sat_1c}};
-\node<9>[anchor=south, inner sep=0pt]      at (19,20) {\includegraphics[height=3cm]{lungs_sat_0c}};
+\node<-2,10>[anchor=south, inner sep=0pt] (ss) at (19,20) {\includegraphics[height=3cm]{lungs_sat_00}};
+\node<3>[anchor=south, inner sep=0pt]     (ss) at (19,20) {\includegraphics[height=3cm]{lungs_sat_30}};
+\node<4>[anchor=south, inner sep=0pt]     (ss) at (19,20) {\includegraphics[height=3cm]{lungs_sat_3a}};
+\node<5>[anchor=south, inner sep=0pt]     (ss) at (19,20) {\includegraphics[height=3cm]{lungs_sat_2a}};
+\node<6>[anchor=south, inner sep=0pt]     (ss) at (19,20) {\includegraphics[height=3cm]{lungs_sat_2b}};
+\node<7>[anchor=south, inner sep=0pt]     (ss) at (19,20) {\includegraphics[height=3cm]{lungs_sat_1b}};
+\node<8>[anchor=south, inner sep=0pt]     (ss) at (19,20) {\includegraphics[height=3cm]{lungs_sat_1c}};
+\node<9>[anchor=south, inner sep=0pt]     (ss) at (19,20) {\includegraphics[height=3cm]{lungs_sat_0c}};
+\node<-5>[right,font=\footnotesize] at (ss.east) {Saturation};
+\node<7-8>[right,font=\footnotesize] at (ss.east) {Désaturation};
 %
 \node<-2>[anchor=north]  at (10,20.5) {Hydratation, fatigue, confort thermique, planification, \dots};
 \node<3>[anchor=north]   at (10,20.5) {Équilibrage oreille, vitesse de descente};
@@ -239,19 +241,29 @@ Dépend de l'état physique et psychologique de la personne.
 \centering%
 \begin{tikzpicture}[y=-7pt,x=12pt]
 \path[use as bounding box] (-2.5,25) rectangle (22.5,-1);
-\shade[top color=white,bottom color=cyan] (0,0) -- (1,20) -- (10,20) -- (14.5714,20) -- (17,3) -- (18,3) -- (19,0);
-\draw[green, very thick] (-1,0) -- (0,0) -- (1,20) -- (10,20) -- (12,10) -- (16,10) -- (17,3) -- (18,3) -- (19,0) -- (20,0);
+\shade[top color=white,bottom color=cyan] (0,0) -- (1,20) -- (10,20) -- (15.5833,20) -- (17,3) -- (18,3) -- (19,0);
+\draw[green, very thick] (-1,0) -- (0,0) -- (1,20) -- (10,20) -- (12,15) -- (16,15) -- (17,3) -- (18,3) -- (19,0) -- (20,0);
 %%% premier profil à risque : yoyos
-\draw<2>[red] (-1,0) -- (0,0) -- (1,20) -- (1.5,20) -- (2,10) -- (3,10) -- (4,20) -- (5,20) -- (7,10) -- (10,10) -- (11,18) -- (12,18) -- (15,3) -- (18,3) -- (19,0) -- (20,0);
+\draw<2-3>[red] (-1,0) -- (0,0) -- (1,20) -- (1.5,20) -- (2,10) -- (3,10) -- (4,20) -- (5,20) -- (7,10) -- (10,10) -- (11,18) -- (12,18) -- (15,3) -- (18,3) -- (19,0) -- (20,0);
 %%% deuxième profil à risque : profil inversé
-\draw<3>[red] (-1,0) -- (0,0) -- (1,10) -- (8,10) -- (9,20) -- (14.5714,20) -- (17,3) -- (18,3) -- (19,0) -- (20,0);
+\draw<4-5>[red] (-1,0) -- (0,0) -- (1,10) -- (8,10) -- (9,20) -- (15.5833,20) -- (17,3) -- (18,3) -- (19,0) -- (20,0);
 %%
-\node<2>[anchor=north] at (10,20.5) {Yoyos};
-\node<3>[anchor=north]  at (10,20.5) {Profil inversé};
+\node<3>[red,font=\bf,anchor=west, align=center] (bad) at (17,10) {Forçage de bulles};
+\node<5>[red,font=\bf,anchor=west, align=center] (bad) at (17,10) {Sursaturation\\maximale\\en sortie};
+\node<2-3>[anchor=north] at (7.8,20.5) {Yoyos};
+\node<4->[anchor=north]  at (7.8,20.5) {Profil inversé};
+\begin{pgfonlayer}{background}
+\node<3,5>[scale=5] at (bad) {\twemoji{skull and crossbones}};
+\end{pgfonlayer}
 \end{tikzpicture}
 \end{frame}
 
 \begin{frame}{\EMPH{LA} méthode 100~\% résultats garantis}
+\only<1>{%
+\begin{center}
+\Huge ?
+\end{center}
+}%
 \begin{exampleblock}<only@2>{\centering Si je ne suis pas sûr(e)}
 \centering\rule{0pt}{1cm}\Large
 Ne pas plonger permet d'éviter l'accident de façon
@@ -295,7 +307,7 @@ toujours été respectées}.
 \begin{block}<4->{Facteurs améliorant}
 \begin{itemize}
 \item Plus de plongées consécutives;
-\item plus de fatique ressentie;
+\item plus de fatigue ressentie;
 \item moins de confort thermique.
 \end{itemize}
 \end{block}
@@ -314,112 +326,3 @@ quelques conclusions.
 \end{itemize}
 \end{exampleblock}
 \end{frame}
-
-\subsection{Ordinateurs \& tables}
-
-\subsubsection{Les tables MN90}
-
-\input{common/table}
-
-\subsubsection{Les ordinateurs}
-
-\begin{frame}{Un ordinateur de plongée}
-\begin{itemize}
-\item Peut toujours calculer MAIS pas plus de deux plongées par
-  \numprint{24}~heures;
-\item vitesse de remontée $\sim\numprint[m\cdot min^{-1}]{10}$, \numprint[m\cdot min^{-1}]{6}
-  entre les paliers.
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Affichage}
-\centering
-\includegraphics<1>[width=10cm]{ordinateur-de-plongee}\\
-source image: \chref{https://differentdive.com/ordinateur-de-plongee/}{differentdive.com}
-\end{frame}
-
-\begin{frame}{Un ordinateur de plongée}{\only<-5>{Savoir le lire}\only<6->{Savoir l'utiliser}}
-\centering
-\includegraphics<-5>[width=5cm]{suunto}%
-\only<-5>{\\Suunto%
-\begin{tikzpicture}[overlay,remember picture, every pin edge/.style={stealth-,shorten <=2pt, green!60!black,thick}]
-\node<2->[draw,green,thick,shape=ellipse,pin={[pin distance=1cm]30:Profondeur}] at (-0.4,4.6) {\rule{1cm}{0pt}\rule{0pt}{5mm}};
-\node<3->[draw,green,thick,shape=ellipse,pin={[pin distance=8mm]right:Temps de plongée}] at (0.3,3.5) {\rule{1cm}{0pt}\rule{0pt}{5mm}};
-\node<4->[draw,green,thick,shape=ellipse,pin={[pin distance=1.2cm,text width=3cm,align=right]left:Temps avant palier/paliers}] at (-1.25,3.5) {\rule{5mm}{0pt}\rule{0pt}{5mm}};
-\node<5>[text width=3cm] at (-4,5) {Profondeur max, vitesse de remontée, \dots};
-\end{tikzpicture}}%
-\begin{columns}<only@6->[c]
-\begin{column}{0.32\textwidth}
-\begin{itemize}[<+(5)->]
-\item Date \& heure
-\item Planification
-\item Mélange gaz
-\item Durcir
-\item Log
-\end{itemize}
-\end{column}
-\begin{column}{0.6\textwidth}
-\raggedleft
-\includegraphics[width=\textwidth]{manual}\\[-10pt]
-\scriptsize pch.vector (Magnific)
-\end{column}
-\end{columns}
-\end{frame}
-
-\subsubsection{Facteur de gradient}
-
-\begin{frame}{Un peu de contexte}
-\centering
-\begin{tikzpicture}
-\pgfmathparse{1.1696 + 7/0.5578}\let\bul\pgfmathresult
-\pgfmathparse{1.1696 + 1/0.5578}\let\bulh\pgfmathresult
-\begin{axis}[clip=false,
-  axis lines=left, axis on top,
-	ymin=0,
-	xmin=0,
-  xtick={0}, xticklabels={Surface},
-  ytick=\empty,
-  xticklabel style={font=\tiny},
-  xlabel={Profondeur}, ylabel={$P_{\text{compart}}$},
-  domain=0:60, name=desat
-]
-\fill<6>[blue!10] (0,1) -- (60,7) -- (60,1) -- cycle;
-\fill<7>[blue!10] (0,1) -- (60,7) -- (60,\bul) -- (0,\bulh) -- cycle;
-\fill<8>[blue!10] (0,\bulh) -- (60,\bul) -- (desat.north east) -- (desat.north west) -- cycle;
-\addplot[] {1 + x/10};
-\addplot[teal] {1};
-\node[anchor=base west] at (60,7) {$P_\text{ext}$};
-\node[anchor=base west] at (60,1) {$P_\text{atm}$};
-\addplot[violet, name path=Bulh]{1.1696 + (1 + x/10)/0.5578};
-\node[violet,anchor=base west] at (60,\bul) {$P_\text{Bülhman}$};
-\only<5>{\addplot[blue,thick] {1 + x/10};}
-\node<9->[inner sep=0pt] (mer) at (50,5) {\texttwemoji{merperson}};
-\path[name path=mermaid] (0,5) -- (60,5);
-\path[name path=sec pal] (0,3.5) -- (60,3.5) -- (60,0) -- (0,0);
-%%
-\path[name intersections={of=Bulh and mermaid, by={pal}}, name path=fpal] (pal) -- ++(0,-5.2);
-\path[name intersections={of=Bulh and sec pal, by={pall}}, name path=spal] (pall) -- ++(0,-3.2);
-\path[name path=sortie] (0,2.5) -- (60,2.5);
-\path[name path=ftime] (40,5) -- (40,0);
-%
-\draw<10->[dashed,name intersections={of=Bulh and mermaid, by={first pal}}, name intersections={of=Bulh and sec pal, by={sec}}] (mer) -- (first pal) |- (sec) |- (0,2.5);
-\draw<11->[green!60!black,-stealth,name intersections={of=sec pal and fpal, by={a,b}}] (a) -- (b) node[below,font=\scriptsize]{Premier palier};
-\draw<12>[green!60!black,dashed,name path=time,name intersections={of=sortie and spal,by={out}}] (out) -- ++(40,0);
-\draw<12>[green!60!black,stealth-stealth,name intersections={of=time and ftime,by={a}},name intersections={of=ftime and mermaid,by={b}}] (a) -- (b) node[right,pos=0.5,font=\scriptsize]{Temps total de palier};
-\end{axis}
-\node<2-5>[inner sep=0pt,anchor=north west] (comp) at (desat.above north west) {\includegraphics[width=2cm]{desat_eq}};
-\node<6>[inner sep=0pt,anchor=north west] (comp) at (desat.above north west) {\includegraphics[width=2cm]{desat_air}};
-\node<7>[inner sep=0pt,anchor=north west] (comp) at (desat.above north west) {\includegraphics[width=2cm]{desat_liq}};
-\node<8>[inner sep=0pt,anchor=north west] (comp) at (desat.above north west) {\includegraphics[width=2cm]{desat_bulle}};
-\draw<3>[blue,thick,-stealth] (0,0) -- (desat.north west);
-\draw<4>[blue,thick,-stealth] (0,0) -- (desat.south east);
-\begin{pgfonlayer}{background}
-\fill<3>[blue!10] (comp.west) rectangle ([yshift=-3pt]comp.south east);
-\fill<4>[blue!10] (comp.west) rectangle (comp.north east);
-\end{pgfonlayer}
-%%
-\end{tikzpicture}
-\end{frame}
-
-%\input{common/facteur_gradient}
-\input{common/facteur_gradient_graphics}

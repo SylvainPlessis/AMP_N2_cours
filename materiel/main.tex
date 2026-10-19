@@ -74,7 +74,7 @@ notamment sur le site de FFESSM. Ne change en pratique rien.
 \end{block}%
 \begin{block}<only@2>{Au final}
 \begin{itemize}
-\item TIV tous les ans;
+\item T.I.V. tous les ans;
 \item requalification:
   \begin{itemize}
     \item tous les deux ans sous régime général;
@@ -184,7 +184,7 @@ Trois types:
 
 \begin{frame}{Détails}
 \centering
-\begin{tikzpicture}
+\begin{tikzpicture}[every pin edge/.append style={thick},pin lines/.style={help lines,thick}]% Gilet »
 \useasboundingbox (-5.2,-3.8) rectangle (5.2,3.8);
 \node<-4,6->[left=1mm]  at (0,0) {\includegraphics[width=5cm]{gilet_recto}};
 \node<-4,6->[right=1mm] at (0,0) {\includegraphics[width=5cm]{gilet_verso}};
@@ -206,13 +206,13 @@ Trois types:
 \node<2> (pect) at (0.5,3)   {Sangle pectorale};
 \node<2> (lat)  at (-3,3)    {Sangles latérales};
 \node<2>[pin={[pin distance=2cm]-70:Sangle bloc}] at (1.75,-0.6) {};
-\draw<2>[help lines] (-3.2,-2.25) -- (vent);
-\draw<2>[help lines] (-3.5,-2.8) -- (vent);
-\draw<2>[help lines] (-2.5,-2.4) -- (vent);
-\draw<2>[help lines] (-2,0.5) -- (pect);
-\draw<2>[help lines] (-3,0.7) -- (pect);
-\draw<2>[help lines] (-1.7,0.8) -- (lat);
-\draw<2>[help lines] (-3.7,0.8) -- (lat);
+\draw<2>[pin lines] (-3.2,-2.25) -- (vent);
+\draw<2>[pin lines] (-3.5,-2.8) -- (vent);
+\draw<2>[pin lines] (-2.5,-2.4) -- (vent);
+\draw<2>[pin lines] (-2,0.5) -- (pect);
+\draw<2>[pin lines] (-3,0.7) -- (pect);
+\draw<2>[pin lines] (-1.7,0.8) -- (lat);
+\draw<2>[pin lines] (-3.7,0.8) -- (lat);
 \node<2>[font=\Large,above] at (0,-3.8) {Sangles};
 
 %%% purges rapide
@@ -234,10 +234,10 @@ Trois types:
 \node<3>[pin={-120:Purge basse}] at (3.85,-1.6) {\rule{0pt}{8pt}\rule{6pt}{0pt}};
 \node<3> (fs) at (0,2.5) {Fenstop};
 \node<3> (ph) at (0,3.5) {Purge haute};
-\draw<3>[help lines,shorten >=7pt] (ph) -- (-3.5,2.45);
-\draw<3>[help lines,shorten >=7pt] (ph) -- (3.45,2.05);
-\draw<3>[help lines,shorten >=6pt] (fs) -- (-1.65,2.45);
-\draw<3>[help lines,shorten >=8pt] (fs) -- (2,2);
+\draw<3>[pin lines,shorten >=7pt] (ph) -- (-3.5,2.45);
+\draw<3>[pin lines,shorten >=7pt] (ph) -- (3.45,2.05);
+\draw<3>[pin lines,shorten >=6pt] (fs) -- (-1.65,2.45);
+\draw<3>[pin lines,shorten >=8pt] (fs) -- (2,2);
 \node<3>[font=\Large,above] at (0,-3.8) {Purges rapides};
 
 %%% direct system
@@ -245,7 +245,7 @@ Trois types:
 \node<5> (ds) at (-3.5,2) {Direct system};
 \node<5>[pin=-90:Purge lente] at (-0.5,-2.3) {};
 \node<5>[pin={[pin distance=7mm]200:Gonflage buccal}] at (-1.5,-1.5) {};
-\draw<5>[help lines] (-0.75,-0.25) -- (ds)
+\draw<5>[pin lines] (-0.75,-0.25) -- (ds)
                      (1.5,0.8) -- (ds);
 \node<4>[font=\Large,above] at (0,-3.8) {Direct system};
 %%% anneaux
@@ -266,9 +266,32 @@ Trois types:
 \fill<8>[gilet] (3.1,-0.1) circle(12pt and 14pt);
 \node<8>[font=\Large,above] at (0,-3.8) {Poches à plombs};
 
-%\draw[pink,very thin,step=0.5] (-5,-3) grid (5,3);
-%\draw[red] (-5,-3) grid (5,3);
-\end{tikzpicture}
+\end{tikzpicture}% «
+\end{frame}
+
+\begin{frame}{Entretien}
+\begin{block}<only@1>{Précautions}
+\begin{itemize}
+\item Fin de plongée: vide l'eau contenue dans le gilet. 
+  Gonfler le gilet puis utiliser la purge basse pour le vider. 
+\item Rincer le gilet à l'eau douce à après chaque utilisation. 
+\item Le stocker légèrement gonflé. 
+\item Éviter de le stocker en plein soleil. 
+\item Lorsque l'on a terminé une série de plongées en milieu naturel rincer
+  l'intérieur du gilet: le remplir par la purge haute ou lente d'eau douce,
+  le purger, remonter la purge rapide si utilisée.
+\end{itemize}
+\end{block}
+\begin{block}<only@2>{Pannes}
+\begin{itemize}
+\item Fuite au niveau des purges rapides: éventuellement mettre un peu de
+  graisse silicone sur la partie en plastique dur (siège du joint).
+\item Fuite au niveau du raccord de branchement du direct système: remplacer
+  le flexible du direct système. 
+\item Le S.S.G.\footnote{Système de Sécurité Gonflable} se gonfle tout seul:
+  réviser ou changer le direct système. 
+\end{itemize}
+\end{block}
 \end{frame}
 
 \subsubsection{Détendeur}
@@ -311,7 +334,7 @@ Trois types:
     \node[font=\footnotesize,below right] {\numprint[m]{10}}; \& \node[font=\footnotesize,below right] {\numprint[bar]{2}}; \\
     \node[font=\footnotesize,below right] {\numprint[m]{20}}; \& \node[font=\footnotesize,below right] {\numprint[bar]{3}}; \\
     \node[font=\footnotesize,below right] {\numprint[m]{30}}; \& \node[font=\footnotesize,below right] {\numprint[bar]{4}}; \\
-    \node[font=\footnotesize,below right] {\dots} ; \\
+    \node[font=\footnotesize,below right] {\dots}; \\
 };
 \node<5>[below right,align=left] (et2c) at (3,-1) {2\up{ème} étage: passage de\\la \textcolor{cyan}{pression intermédiaire}\\à la \textcolor{cyan!50}{pression ambiante}};
 \node<5>[draw,red,circle,thick] (et2p) at (2.2,-0.1) {\rule{0pt}{30pt}};
@@ -430,7 +453,7 @@ Trois types:
 \end{tikzpicture} %% «
 \end{frame}
 
-\begin{frame}{Présentation}
+\begin{frame}{Le premier étage}
 \centering%
 \begin{columns}
 \begin{column}{0.5\textwidth}
@@ -447,6 +470,7 @@ Trois types:
 \node at (1,5) {$P_\text{H}$};
 \draw[ouverture=rhp] ($(-2,5.5)-(1.5mm,0)$) -- ++( 3mm,0)
                      ($( 2,5  )+(1.5mm,0)$) -- ++(-3mm,0);
+\draw[-stealth,very thick] (-2,5.5) -- ++(5mm,0);
 
 %eau
 \fill[eau] ($(-2,4)+(1.5mm,-1.5mm) + (-0.1pt,0)$) rectangle ($(-1.5mm,2)+(0,1mm)$)
@@ -517,6 +541,7 @@ Trois types:
 \node at (1,5) {$P_\text{H}$};
 \draw[ouverture=rhp] ($(-2,5.5)-(1.5mm,0)$) -- ++( 3mm,0)
                      ($( 2,5  )+(1.5mm,0)$) -- ++(-3mm,0);
+\draw[-stealth,very thick] (-2,5.5) -- ++(5mm,0);
 
 %eau
 \fill[eau] ($(-2,4)+(1.5mm,-1.5mm) + (-0.1pt,0)$) rectangle ($(-1.5mm,2)+(0,0mm)$)
@@ -585,9 +610,10 @@ Trois types:
 %hp
 \fill[rhp] ($(-2,6)+(1.5mm,-1.5mm)$) rectangle ($(2,5)-(1.5mm,-1.5mm)$)
            ($(0,5)+(-0.5mm,1.5mm)$)  rectangle ($(0,4.8)+(0.5mm,-1.5mm)$);
-\node at (0,5.5) {$P_\text{H}$};
+\node at (1,5.5) {$P_\text{H}$};
 \draw[ouverture=rhp] ($(0,6)-(0,1.5mm)$) -- ++(0,3mm)
                      ($( 2,5.5)+(1.5mm,0)$) -- ++(-3mm,0);
+\draw[-stealth,very thick] (0,6) -- ++(0,-5mm);
 
 %eau
 \fill[eau] ($(-2,4)+(1.5mm,-1.5mm) + (-0.1pt,0)$) rectangle ($(-1.5mm,2)+(0,1mm)$)
@@ -670,7 +696,6 @@ Trois types:
 \end{scope}
 \draw[membrane] (-2,1.5) ..controls +(0.5,0) .. (-0.5,1.2) -- ++(1,0) .. controls +(1,0.3) ..(2,1.5); 
 
-
 %piston complet
 \draw[darkgray!80,line width=4.5pt] ($(-0.5,3)+(0,3mm+2pt)$) -- ++(1,0); 
 \draw[darkgray!80,line width=2.5mm] ($(0,3)+(0,3mm+2pt)$) -- ++(0,2.2); 
@@ -697,6 +722,7 @@ Trois types:
 
 % HP
 \draw[ouverture=rhp] ($(-2,4.5)-(1.5mm,0)$) -- ++(3mm,0);
+\draw[-stealth,very thick] (-2,4.5) -- ++(5mm,0);
 % mano
 \draw[ouverture=rhp] ($(-2,3.5)-(1.5mm,0)$) -- ++(3mm,0);
 
@@ -852,12 +878,15 @@ Trois types:
 
 %eau
 \begin{scope}
-\clip ($(-3,1.5)+(0.5mm,0)$) .. controls +(0.7,0) and +(0,-0.7) .. ($(-1,2.2)+(0,-0.5mm)$) -- ++(2,0) .. controls +(0,-0.7) and +(-0.7,0) .. ($(3,1.5)-(0.5mm,0)$) -- 
+\clip<-3,5> ($(-3,1.5)+(0.5mm,0)$) .. controls +(0.7,0) and +(0,-0.7) .. ($(-1,2.4)+(0,-0.5mm)$) -- ++(2,0) .. controls +(0,-0.7) and +(-0.7,0) .. ($(3,1.5)-(0.5mm,0)$) -- 
+      ++(0,0.5) -- ($(2,3)+(0,-0.5mm)$) -- ($(0.7,3)+(1mm,-0.5mm)$) |- ($(-0.7,2.4)-(1mm,0.5mm)$) |- ($(-2,3)-(0,0.5mm)$) -- ($(-3,2)+(0.5mm,0)$) -- cycle;
+\clip<4,6> ($(-3,1.5)+(0.5mm,0)$) .. controls +(0.7,0) and +(0,-0.7) .. ($(-1,2.2)+(0,-0.5mm)$) -- ++(2,0) .. controls +(0,-0.7) and +(-0.7,0) .. ($(3,1.5)-(0.5mm,0)$) -- 
       ++(0,0.5) -- ($(2,3)+(0,-0.5mm)$) -- ($(0.7,3)+(1mm,-0.5mm)$) |- ($(-0.7,2.2)-(1mm,0.5mm)$) |- ($(-2,3)-(0,0.5mm)$) -- ($(-3,2)+(0.5mm,0)$) -- cycle;
 \fill[eau] (-3,1.5) rectangle (3,3);
 \end{scope}
 \begin{scope}
-\clip ($(-3,0)+(0.5mm,0.5mm)$) -- ++(0,1.5) .. controls +(0.7,0) and +(0,-0.7) .. ($(-1,2.2)+(0,-0.5mm)$) -- ++(2,0) .. controls +(0,-0.7) and +(-0.7,0) .. ($(3,1.5)+(-0.5mm,0)$) -- ++ ($(0,-1.5)+(0,0.5mm)$) -- cycle;
+\clip<-3,5> ($(-3,0)+(0.5mm,0.5mm)$) -- ++(0,1.5) .. controls +(0.7,0) and +(0,-0.7) .. ($(-1,2.4)+(0,-0.5mm)$) -- ++(2,0) .. controls +(0,-0.7) and +(-0.7,0) .. ($(3,1.5)+(-0.5mm,0)$) -- ++ ($(0,-1.5)+(0,0.5mm)$) -- cycle;
+\clip<4,6> ($(-3,0)+(0.5mm,0.5mm)$) -- ++(0,1.5) .. controls +(0.7,0) and +(0,-0.7) .. ($(-1,2.2)+(0,-0.5mm)$) -- ++(2,0) .. controls +(0,-0.7) and +(-0.7,0) .. ($(3,1.5)+(-0.5mm,0)$) -- ++ ($(0,-1.5)+(0,0.5mm)$) -- cycle;
 \fill[rpa] (-3,0) rectangle (3,2.4);
 \end{scope}
 
@@ -869,26 +898,44 @@ Trois types:
 \end{scope}
 \draw[gray,line width=3pt] (-0.4,0.2) -- ++(0,-0.5) arc(90:250:2mm and 4mm) (-0.6,-0.7) -- ++(0.3,0)
                            ( 0.4,0.2) -- ++(0,-0.5) arc(90:-70:2mm and 4mm) ( 0.6,-0.7) -- ++(-0.3,0);
+% inspiration
+\draw<2-4>[-stealth,thick,cyan!60] (-0.1,0) .. controls ++(0,-1) .. ++(-0.6,-1.5);
+\draw<2-4>[-stealth,thick,cyan!60] (0,0) -- ++(0,-1.5);
+\draw<2-4>[-stealth,thick,cyan!60] (0.1,0) .. controls ++(0,-1) .. ++(0.6,-1.5);
+\node<2-4>[below] at (0,-1.5) {Inspiration};
 %% bouton
-\draw<1>[piston] ($(-0.7,3)+(0,-0.5mm)$) -- ++(1.4,0); 
-\draw<1>[pistonaxis] ($(-0.3,3)+(0,-1mm)$) -- (-0.3,2.2) 
+\draw<-4,5>[piston] ($(-0.7,3)+(0,-0.5mm)$) -- ++(1.4,0); 
+\draw<-3,5>[pistonaxis] ($(-0.3,3)+(0,-1mm)$) -- (-0.3,2.4) 
+                     ($( 0.3,3)+(0,-1mm)$) -- ( 0.3,2.4);
+\draw<4>[pistonaxis] ($(-0.3,3)+(0,-1mm)$) -- (-0.3,2.2) 
                      ($( 0.3,3)+(0,-1mm)$) -- ( 0.3,2.2);
-\draw<2>[piston] ($(-0.7,2.8)+(0,-0.5mm)$) -- ++(1.4,0); 
-\draw<2>[pistonaxis] ($(-0.3,2.8)+(0,-1mm)$) -- (-0.3,2.2) 
+\draw<6->[piston] ($(-0.7,2.8)+(0,-0.5mm)$) -- ++(1.4,0); 
+\draw<6->[pistonaxis] ($(-0.3,2.8)+(0,-1mm)$) -- (-0.3,2.2) 
                      ($( 0.3,2.8)+(0,-1mm)$) -- ( 0.3,2.2);
 \begin{scope}
-\clip<1> (-0.45,2.2) rectangle ($(-0.3,3)+(-0.5mm,-1.5mm)$)
+\clip<-3,5> (-0.45,2.4) rectangle ($(-0.3,3)+(-0.5mm,-1.5mm)$)
     ($(-0.3,3)-(0.5mm,2.5mm)$) rectangle ++(1mm,2pt)
     ($(-0.3,3)-(0.5mm,4.5mm)$) rectangle ++(1mm,2pt)
-    ($(-0.3,3)-(0.5mm,6.5mm)$) rectangle ++(1mm,2pt)
-    ($(-0.3,3)+(0.5mm,-1.5mm)$) rectangle ($(0.3,2.2)+(-0.5mm,0)$)
+    ($(-0.3,3)+(0.5mm,-1.5mm)$) rectangle ($(0.3,2.4)+(-0.5mm,0)$)
     ($( 0.3,3)-(0.5mm,1.5mm)$) rectangle ++(1mm,-2pt)
     ($( 0.3,3)-(0.5mm,3.5mm)$) rectangle ++(1mm,-2pt)
     ($( 0.3,3)-(0.5mm,5.5mm)$) rectangle ++(1mm,-2pt)
-    ($( 0.3,3)-(0.5mm,7.5mm)$) rectangle ++(1mm,-2pt)
+    (0.45,2.4) rectangle ($(0.3,3)+(0.5mm,-1.5mm)$);
+\clip<4> (-0.45,2.2) rectangle ($(-0.3,3)+(-0.5mm,-1.5mm)$)
+    ($(-0.3,3)-(0.5mm,2.5mm)$) rectangle ++(1mm,2pt)
+    ($(-0.3,3)-(0.5mm,4.5mm)$) rectangle ++(1mm,2pt)
+    ($(-0.3,3)+(0.5mm,-1.5mm)$) rectangle ($(0.3,2.4)+(-0.5mm,0)$)
+    ($( 0.3,3)-(0.5mm,1.5mm)$) rectangle ++(1mm,-2pt)
+    ($( 0.3,3)-(0.5mm,3.5mm)$) rectangle ++(1mm,-2pt)
+    ($( 0.3,3)-(0.5mm,5.5mm)$) rectangle ++(1mm,-2pt)
+    ($(-0.3,2.8)-(0.5mm,2.5mm)$) rectangle ++(1mm,2pt)
+    ($(-0.3,2.8)-(0.5mm,4.5mm)$) rectangle ++(1mm,2pt)
+    ($(-0.3,2.8)+(0.5mm,-1.5mm)$) rectangle ($(0.3,2.2)+(-0.5mm,0)$)
+    ($( 0.3,2.8)-(0.5mm,1.5mm)$) rectangle ++(1mm,-2pt)
+    ($( 0.3,2.8)-(0.5mm,3.5mm)$) rectangle ++(1mm,-2pt)
+    ($( 0.3,2.8)-(0.5mm,5.5mm)$) rectangle ++(1mm,-2pt)
     (0.45,2.2) rectangle ($(0.3,3)+(0.5mm,-1.5mm)$);
-\draw<1>[smallressort] ($(0,3)+(0,-1mm)$) -- (0,2.2);
-\clip<2> (-0.45,2.2) rectangle ($(-0.3,2.8)+(-0.5mm,-1.5mm)$)
+\clip<6-> (-0.45,2.2) rectangle ($(-0.3,2.8)+(-0.5mm,-1.5mm)$)
     ($(-0.3,2.8)-(0.5mm,2.5mm)$) rectangle ++(1mm,2pt)
     ($(-0.3,2.8)-(0.5mm,4.5mm)$) rectangle ++(1mm,2pt)
     ($(-0.3,2.8)+(0.5mm,-1.5mm)$) rectangle ($(0.3,2.2)+(-0.5mm,0)$)
@@ -896,10 +943,11 @@ Trois types:
     ($( 0.3,2.8)-(0.5mm,3.5mm)$) rectangle ++(1mm,-2pt)
     ($( 0.3,2.8)-(0.5mm,5.5mm)$) rectangle ++(1mm,-2pt)
     (0.45,2.2) rectangle ($(0.3,2.8)+(0.5mm,-1.5mm)$);
-\draw<2>[smallressort] ($(0,3)+(0,-1mm)$) -- (0,2.2);
+\draw[smallressort] ($(0,3)+(0,-1mm)$) -- (0,2);
 \end{scope}
 %membrane
-\draw[membrane, name path=memb] (-3,1.5) .. controls +(0.7,0) and +(0,-0.7) .. ($(-1,2.2)+(0,-0.5mm)$) -- ++(2,0) .. controls +(0,-0.7) and +(-0.7,0) .. (3,1.5);
+\draw<-3,5>[membrane, name path=memb]  (-3,1.5) .. controls +(0.7,0) and +(0,-0.7) .. ($(-1,2.4)+(0,-0.5mm)$) -- ++(2,0) .. controls +(0,-0.7) and +(-0.7,0) .. (3,1.5);
+\draw<4,6->[membrane, name path=memb] (-3,1.5) .. controls +(0.7,0) and +(0,-0.7) .. ($(-1,2.2)+(0,-0.5mm)$) -- ++(2,0) .. controls +(0,-0.7) and +(-0.7,0) .. (3,1.5);
 
 % entrée PI
 \fill[white] ($(3.6,0.7)+(0,-2mm)$) rectangle ($(2.7,0.7)+(0,2mm)$);
@@ -908,24 +956,39 @@ Trois types:
 \fill[rpi] ($(2.7,0.71)-(3pt,0)$) rectangle ($(2.7,0.69)+(3pt,0)$);
 \fill[gray] (2.7,0.71) -- ++(-3pt,0) -- (2.7,0.73) -- cycle;
 \fill[gray] (2.7,0.69) -- ++(-3pt,0) -- (2.7,0.67) -- cycle;
-\draw[pistonaxis] ($(2.65,0.7625)+(-3pt-0.5mm,0)$) -- ($(2.65,0.69)+(-3pt-0.5mm,-0.0625)$);
-\draw[joint,line width=0.5mm] ($(2.65,0.73125)+(-3pt-0.25mm,0)$) -- ($(2.65,0.69)+(-3pt-0.25mm,-0.03125)$);
-\draw[pistonthinaxis,name path=piston] (-0.45,0.7) -- ($(2.65,0.7)+(-3pt-0.5mm,0)$);
+%%
+\draw<-3,5>[pistonaxis] ($(2.7,0.7625)+(-3pt-0.5mm,0)$) -- ($(2.7,0.69)+(-3pt-0.5mm,-0.0625)$);
+\draw<-3,5>[joint,line width=0.5mm] ($(2.7,0.73125)+(-3pt-0.25mm,0)$) -- ($(2.7,0.69)+(-3pt-0.25mm,-0.03125)$);
+\draw<-3,5>[pistonthinaxis,name path=piston] (-0.4,0.7) -- ($(2.7,0.7)+(-3pt-0.5mm,0)$);
+\draw<4,6>[pistonaxis] ($(2.65,0.7625)+(-3pt-0.5mm,0)$) -- ($(2.65,0.69)+(-3pt-0.5mm,-0.0625)$);
+\draw<4,6>[joint,line width=0.5mm] ($(2.65,0.73125)+(-3pt-0.25mm,0)$) -- ($(2.65,0.69)+(-3pt-0.25mm,-0.03125)$);
+\draw<4,6>[pistonthinaxis,name path=piston] (-0.45,0.7) -- ($(2.65,0.7)+(-3pt-0.5mm,0)$);
 \begin{scope}
-\clip ($(-0.45,0.7)+(0,0.35mm)$) rectangle ($(2.65,0.7)+(-3pt-1mm,1.2mm)$)
+\clip<-3,5> ($(-0.4,0.7)+(0,0.35mm)$) rectangle ($(2.7,0.7)+(-3pt-1mm,1.2mm)$)
+    foreach \i in {0,...,13}{
+    ($(-0.4,0.7)+(0.5mm,0.35mm)+\i*(2mm,0)$) rectangle ++(1mm,-0.7mm)}
+    ($(-0.4,0.7)-(0,0.35mm)$) rectangle ($(2.7,0.7)+(-3pt-1mm,-1.2mm)$);
+\draw<-3,5>[tinyressort] (-0.4,0.7) -- ($(2.7,0.7)+(-3pt-0.5mm,0)$);
+\clip<4,6> ($(-0.45,0.7)+(0,0.35mm)$) rectangle ($(2.65,0.7)+(-3pt-1mm,1.2mm)$)
     foreach \i in {0,...,13}{
     ($(-0.45,0.7)+(0.5mm,0.35mm)+\i*(2mm,0)$) rectangle ++(1mm,-0.7mm)}
     ($(-0.45,0.7)-(0,0.35mm)$) rectangle ($(2.65,0.7)+(-3pt-1mm,-1.2mm)$);
-\draw[tinyressort] (-0.45,0.7) -- ($(2.65,0.7)+(-3pt-0.5mm,0)$);
+\draw<4,6>[tinyressort] (-0.45,0.7) -- ($(2.65,0.7)+(-3pt-0.5mm,0)$);
 \end{scope}
+%% air qui rentre
+\draw<4,6>[-stealth,cyan!60] ($(2.7,0.71)+(-3.3pt,0)$) .. controls ++(0,5pt) .. ++(-4pt,10pt);
+\draw<4,6>[-stealth,cyan!60] ($(2.7,0.69)+(-3.3pt,0)$) .. controls ++(0,-5pt) .. ++(-4pt,-10pt);
 
 %mécanisme
 \coordinate (c) at (-0.1,1.3);
 \draw (c) circle (10pt)
   \foreach \a in {30,90,...,360}{ -- +(\a:10pt) (c)};
-\path[name path=levierup] (c) -- ++(70:1.5cm);
-\path[name path=levierdown] (c) -- ++(-110:1cm);
+\path<-3,5>[name path=levierup] (c) -- ++(80:1.5cm);
+\path<4,6>[name path=levierup] (c) -- ++(70:1.5cm);
+\path<-3,5>[name path=levierdown] (c) -- ++(-100:1cm);
+\path<4,6>[name path=levierdown] (c) -- ++(-110:1cm);
 \path[name path=uppist] (-3,0.9) --++(6,0);
+%%
 \path[name intersections={of=memb and levierup,by={uplev}}];
 \path[name intersections={of=uppist and levierdown,by={downlev}}];
 \coordinate (start) at ($(uplev)+(10pt,-5pt-0.5mm)$);
@@ -934,21 +997,200 @@ Trois types:
 \fill[darkgray!80] ($(leftpis)+(-0.4pt,-3pt)$) arc(270:90:3pt) -- cycle;
 
 \node at (2.4,2) {$P_\text{A}$};
-\node at (-2,1)  {$P_\text{A}$};
+\node<3-4> at (-2,1)  {$P_\text{A}^-$};
+\node<-2,5-> at (-2,1)  {$P_\text{A}$};
 \node at (3,0.7) {$\scriptstyle P_\text{I}$};
 \end{tikzpicture}% «
+\end{frame}
+
+\begin{frame}{Entretien}
+\begin{block}{}
+\begin{itemize}
+\item Embout buccal à changer régulièrement;
+\item rincer à lgeau froide en obturant l’entrée du 1\up{er} étage;
+\item selon les modèles, régulièrement, ouvrir le 2\up{nd} étage et laver la
+  casserole (2\up{nd} étage);
+\item faire réviser son détendeur tous les \numprint[ans]{2} maximum. Certains
+  le font même tous les ans;
+\item stocker pendu à la verticale avec le 1\up{er} étage non obturé.
+\end{itemize}
+\end{block}
 \end{frame}
 
 \subsubsection{Combinaison}
 
 \begin{frame}{Combinaison}
-Trois types:
+Elle limite la perte de chaleur.
+\begin{block}<2>{On perd de la chaleur}
 \begin{itemize}
-\item humide;
-\item semi-étanche;
-\item étanche.
+\item par contact avec l'eau dans la combinaison;
+\item par contact avec l'eau à l'extérieur à travers la combinaison.
+\item L'air froid et sec de la bouteille pompe de la
+  chaleur par évaporation et conduction.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Combinaison}
+Trois types:
+\begin{columns}[onlytextwidth]
+\begin{column}{0.3\textwidth}
+\begin{itemize}
+\item<-2,7> humide;
+\item<3-4,7> semi-étanche;
+\item<5-6> étanche.
+\end{itemize}
+\end{column}
+\begin{column}{0.7\textwidth}
+\centering
+\begin{columns}
+\begin{column}{0.44\textwidth}
+\raggedleft
+\includegraphics<1>{combi_humide_circ}%
+\includegraphics<2>{combi_humide}%
+\includegraphics<3>{combi_semi_in}%
+\includegraphics<4>{combi_semi}%
+\includegraphics<5>{combi_etanche_no}%
+\includegraphics<6>{combi_etanche}%
+\includegraphics<7>{combi}%
+\end{column}
+\begin{column}{0.56\textwidth}
+\only<7>{Mono-pièce, bi-pièce, capuche intégrée ou non}%
+\only<-6>{\begin{tabular}{c@{\hspace{2pt}}l}
+\rule{15pt}{0pt}&\\
+\only<-2>{\begin{tikzpicture}
+\draw[cyan,-stealth] (0,0) --++(0,10pt);
+\draw[red,-stealth] (5pt,10pt) --++(0,-10pt);
+\end{tikzpicture}}%
+\only<3-4>{\tikz\draw[cyan,-stealth] (0,0) --++(0,10pt);}%
+\only<5->{\tikz\draw[cyan,-stealth] (0,0) arc(0:360:5pt);}%
+&%
+\only<-2>{Circulation de l'eau}%
+\only<3-4>{L'eau ne sort pas}%
+\only<5->{L'eau ne rentre pas}\\
+\uncover<2,4,6>{\tikz\draw[decorate,decoration={snake,segment length=4pt,amplitude=1pt,post length=2pt},-stealth,red] (0,0) --++(0,10pt);} & \uncover<2,4,6>{Conduction} \\
+\uncover<2,4,6>{\tikz\draw[yellow,-stealth] (0,0) --++(0,10pt);} & \uncover<2,4,6>{Ventilation} \\
+\end{tabular}}
+\end{column}
+\end{columns}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Combinaison}{Entretien}
+\begin{block}{Après utilisation}
+Bien rincer à l'eau claire, éviter l'exposition directe
+au soleil.
+\end{block}
+\begin{block}{Longue durée}
+Suspendue sur un cintre, dans un endroit sec et protégé
+du soleil.
+
+Ne pas plier et ranger dans un tiroir!
+\end{block}
+\end{frame}
+
+\begin{frame}{Compléments}
+\begin{itemize}
+\item Cagoule (intégrée ou non);
+\item gants;
+\item souris;
+\item chaussons, botillons\dots
 \end{itemize}
 \end{frame}
 
 \subsubsection{Palmes/masque[/tuba]}
+
+\begin{frame}{Palmes}
+\centering\only<-3>{%
+\begin{tikzpicture}
+\node (p) at (0,0) {\includegraphics[width=10cm]{palme}};
+\path (p) ++(3:2cm) coordinate (a);
+\path (p) ++(64:36mm) coordinate (b);
+\path (p) ++(118:16mm) coordinate (c);
+\path (p) ++(23:51mm)  coordinate (d);
+\path (p) ++(3:10mm) coordinate (e);
+\path (p) ++(80:30mm) coordinate (f);
+\draw<2>[red,stealth-stealth] (a) -- (b);
+\draw<2>[red,stealth-stealth] (c) -- (d);
+\node<2>[above,red] at (p.south) {Voilure};
+\draw<3>[red,very thick] (e) -- (f);
+\node<3>[above,red] at (p.south) {Articulation};
+\end{tikzpicture}}%
+\begin{block}<only@4>{Description technique}%
+\begin{center}
+\begin{tabular}{ll}\toprule
+Voilure      & puissance disponible \\
+Articulation & type de palmage*\\\bottomrule
+\end{tabular}
+\end{center}
+\begin{minipage}{5pt}
+*
+\end{minipage}%
+\begin{minipage}{4cm}
+\begin{itemize}
+\item Académique,
+\item \og du genou\fg
+\end{itemize}
+\end{minipage}
+\end{block}%
+\end{frame}
+
+\begin{frame}{Chaussantes v/s réglables}
+\centering
+\only<1>{\begin{tabular}{m{3cm}m{5.1cm}}
+\includegraphics[height=3cm]{chaussons}                   & \includegraphics[width=5cm]{palme} \\
+\includegraphics[height=3cm,angle=90,origin=c]{botillons} & \includegraphics[angle=-90,width=5cm,origin=c]{palmes_bot}\\
+\end{tabular}}%
+\only<2>{%
+\begin{tabular}{lp{6cm}}\toprule
+Chaussantes & plus petites, moins technique, plus facile, moins puissantes\\
+Réglables   & plus grandes, cheville tenue, palmage en surface plus compliqué\\\midrule
+\multicolumn{2}{l}{Des exceptions existent (palmes de chasse,\dots)}\\\bottomrule
+\end{tabular}
+}%
+\end{frame}
+
+\begin{frame}{Le masque}
+\centering
+\begin{block}<only@1>{}
+Composé d'une jupe, du ou des verres. Doit tenir
+par effet ventouse, tête en bas, plaqué par simple
+inspiration.
+\end{block}\only<2>{%
+\begin{tikzpicture}[overlay, remember picture,pin lines/.style={help lines,thick}]
+\node (pic) at (current page.center) {\includegraphics[width=\textwidth]{masques}};
+\node (jupe) at (pic.north) {Jupe};
+\draw[pin lines] (-3,0.5) -- (jupe);
+\draw[pin lines] (2.5,0.75) -- (jupe);
+\node (verre) at (pic.south) {Verres};
+\draw[pin lines] (2.5,0) -- (verre);
+\draw[pin lines] (-1.5,-0.5) -- (verre);
+\draw[pin lines] (-4.5,-0.5) -- (verre);
+\end{tikzpicture}
+}
+\end{frame}
+
+\begin{frame}{Tubas}
+\centering
+\includegraphics[width=7cm]{tubas}
+\end{frame}
+
 \subsubsection{Petit matos}
+
+\begin{frame}{Parachute, compas, phare, \dots}
+\begin{itemize}[<+->]
+\item Gants et chaussons: humides ou étanches, avec plus ou moins d'épaisseur
+  de néoprène;
+\item plombs: classiques, \og écologiques\fg\ ou en sac (billes);
+\item couteau: classique ou plus élaboré, petit ou grand;
+\item phare (lampe): pile ou batterie, puissance, encombrement, durée de fonctionnement;
+\item tables de plongée: tables MN90;
+\item profondimètre (ou ordinateur): fixé sur le bras, le gilet, relié à la
+  bouteille, plus ou moins gros et précis;
+\item compas: fixé sur le bras, le gilet, plus ou moins gros et précis;
+\item parachute: plus ou moins gros, reliée à un filin souple d'une longueur
+  d'environ \numprint[m]{7};
+\item manomètre: sonde, plus ou moins gros et précis.
+\end{itemize}
+\end{frame}

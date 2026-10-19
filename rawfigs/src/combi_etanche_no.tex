@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage[top=0pt,bottom=0pt,left=0pt,right=0pt,paperheight=7cm,paperwidth=2.8cm]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+\input{figspreamble}
+\begin{document}
+\centering\begin{tikzpicture}[every path/.append style={thick,cyan}]
+\node[inner sep=0pt] (pic) at (0,0) {\includegraphics[height=7cm,viewport=0 0 105 310,clip]{combi_src}};
+\node[above,inner sep=0pt,violet,font=\small] at (pic.south) {brgfx};
+\draw[-stealth] (185:1) arc(0:360:5pt);
+\draw[-stealth] (-5:1) arc(180:-180:5pt);
+\draw[-stealth] (260:2.8) arc(0:360:5pt);
+\draw[stealth-] (280:2.8) arc(180:-180:5pt);
+\draw[stealth-] (85:2) arc(180:-180:5pt);
+\draw[-stealth] (95:2) arc(0:360:5pt);
+
+\begin{scope}[every path/.append style={nearly transparent}]
+\draw[thin,red,decorate,decoration={snake,segment length=4pt,amplitude=1pt,post length=2pt},-stealth] (60:1.7) -- ++(20:12pt);
+\draw[thin,red,decorate,decoration={snake,segment length=4pt,amplitude=1pt,post length=2pt},-stealth] (120:1.7) -- ++(160:12pt);
+\draw[thin,red,decorate,decoration={snake,segment length=4pt,amplitude=1pt,post length=2pt},-stealth] (20:1) -- ++(20:12pt);
+\draw[thin,red,decorate,decoration={snake,segment length=4pt,amplitude=1pt,post length=2pt},-stealth] (160:1) -- ++(160:12pt);
+\draw[thin,red,decorate,decoration={snake,segment length=4pt,amplitude=1pt,post length=2pt},-stealth] (-60:1.2) -- ++(20:12pt);
+\draw[thin,red,decorate,decoration={snake,segment length=4pt,amplitude=1pt,post length=2pt},-stealth] (240:1.2) -- ++(160:12pt);
+\draw[thin,red,decorate,decoration={snake,segment length=4pt,amplitude=1pt,post length=2pt},-stealth] (-72:2) -- ++(20:12pt);
+\draw[thin,red,decorate,decoration={snake,segment length=4pt,amplitude=1pt,post length=2pt},-stealth] (252:2) -- ++(160:12pt);
+
+\draw[thin,yellow,-stealth] (92:2.1) .. controls +(0,0.2) and +(0.5,0) .. ++(-1,0.5);
+\draw[thin,yellow,-stealth] (88:2.1) .. controls +(0,0.2) and +(-0.5,0) .. ++(1,0.5);
+\draw[thin,dashed,yellow,-stealth] (90:2.1) -- ++(0,-0.5);
+\end{scope}
+\end{tikzpicture}
+\end{document}
