@@ -12,11 +12,11 @@
   big echange/.style={echange, double=white, thick},
   small echange/.style={echange, double=white, very thin}]
 \path[use as bounding box] (-1.7,-4.5) rectangle (1.7,1.5);
-\tikzair{12}
+\simpletikzair{12}
 \begin{scope}[yshift=-3cm]
 \shade[top color=white,bottom color=red!30] (-1.5,-1.5) rectangle (1.5,1.5);
 \node at (0,0) {\includegraphics[height=2.5cm]{circulation-sanguine}};
-\tikzair{10}
+\simpletikzair{10}
 \end{scope}
 \draw (-1.7,-1.5) -- (1.7,-1.5) node[pos=0.5,nearly opaque,font=\Huge,scale=2]{\texttwemoji{lungs}};
 \draw[echange] (-0.375,-1.3) -- ++(0,-0.4);
